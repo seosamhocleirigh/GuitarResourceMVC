@@ -276,7 +276,7 @@ span.underline {
 -------------------------------------------------------- */
 .site-top {
   position: relative;
-  background-image: url(../images/alpines-mountain.jpg);
+  /*background-image: url(../images/alpines-mountain.jpg);*/
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -290,17 +290,19 @@ span.underline {
   top: 0;
   left: 0;
   z-index: 7;
-  background: rgba(0, 0, 0, 0.64);
+  background-color: black;
+  /*background: rgba(0, 0, 0, 0.64);*/
 }
 
 .site-header {
-  padding: 40px 0;
-  position: relative;
-  z-index: 9;
+    padding: 40px 0;
+    position: relative;
+    z-index: 9;
 }
 
-.site-brand {
-  float: left;
+.site-header .site-brand h2 {
+    color: #E1C400;
+    font-family: impact;
 }
 
 .toggle-menu {
@@ -383,11 +385,10 @@ span.underline {
 }
 
 /*------ services ------ */
-#services
-{
+#services {
     margin-bottom: 50px;
     width: 100%;
-    background-image: url('../images/slide/squared_metal.png');
+    background-image: url('../images/slide/tech_squared.png');
     background-repeat: repeat;
 }
 #services .page-section {
@@ -610,12 +611,11 @@ span.underline {
 /*---------------------------------------------------------
  5. Footer
 -------------------------------------------------------- */
-.site-footer
-{
+.site-footer {
     padding: 20px 0;
     background: #e9e9e9;
     border-top: 4px solid gainsboro;
-    background-image: url('../images/slide/squared_metal.png');
+    /*background-image: url('../images/slide/tech_squared.png');*/
     background-repeat: repeat;
     border-top-color: #999999;
 }
