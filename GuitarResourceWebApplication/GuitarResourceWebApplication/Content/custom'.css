@@ -275,12 +275,12 @@ span.underline {
  3. Header
 -------------------------------------------------------- */
 .site-top {
-  position: relative;
-  /*background-image: url(../images/alpines-mountain.jpg);*/
-  background-attachment: fixed;
-  background-position: center;
+  /*position: relative;*/
+  background-image: url(../images/guitar_header.jpg);
+  /*background-attachment: fixed;*/
+  /*background-position: center;*/
   background-repeat: no-repeat;
-  background-size: cover;
+  /*background-size: cover;*/
 }
 
 .site-top-overlay {
@@ -290,7 +290,7 @@ span.underline {
   top: 0;
   left: 0;
   z-index: 7;
-  background-color: black;
+  /*background-color: black;*/
   /*background: rgba(0, 0, 0, 0.64);*/
 }
 
@@ -300,7 +300,7 @@ span.underline {
     z-index: 9;
 }
 
-.site-header .site-brand h2 {
+.site-header  h2 {
     color: #E1C400;
     font-family: impact;
 }

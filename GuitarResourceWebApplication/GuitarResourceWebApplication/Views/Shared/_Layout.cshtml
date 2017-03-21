@@ -23,6 +23,38 @@
     <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
     <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
     <!--[if gt IE 8]><!-->
+    <style>
+        div.container {
+            width: 1280px;
+        }
+
+
+        nav {
+            float: right;
+            width: 300px;
+            margin: 0;
+            padding: 1em;
+            text-align: right;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                nav ul a {
+                    text-decoration: none;
+                }
+
+        article {
+            width: 830px;
+            margin-right: 50px;
+            border-right: 5px solid gray;
+            padding: 1em;
+            overflow: hidden;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -32,11 +64,12 @@
         </div>
         <div class="site-header">
             <div class="container">
-                <a href="#" class="site-brand">
+                @*<a href="#" class="site-brand">*@
+                <a href="#">
                     @*<img src="/images/logo.png" alt="Bootstrap template">*@
                     <h2>Guitar Learning Resource</h2>
                 </a>
-                <div class="main-navigation">
+                @*<div class="main-navigation">
                     <a href="#" class="visible-xs toggle-menu"><i class="fa fa-bars"></i></a>
                     <nav class="site-navigation">
                         <ul>
@@ -45,7 +78,7 @@
                             <li><a href="#cta">Contact</a></li>
                         </ul>
                     </nav>
-                </div>
+                </div>*@
                 <!-- .main-navigation -->
             </div>
         </div>
@@ -95,12 +128,48 @@
         </div>*@
         <!-- POSTS -->
         <section id="posts" class="page-section">
-            @*<div class="container">
+            
+            
+                <div class="container">
+
+                    
+                    <nav>
+                        <ul>
+                            <b>
+                                <li><a href="#">Hi</a></li>
+                                <li><a href="#">Hi</a></li>
+                                <li><a href="#">Hi</a></li>
+                                <li><a href="#">Test</a></li>
+                                <li><a href="#">Test2</a></li>
+                            </b>
+                        </ul>
+                    </nav>
+
+                    <article>
+                        <h1><b>Hello!</b></h1>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+                        <p>Insert text here.</p>
+
+                    </article>
+
+                    
+                </div>
+
+                @*<div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <h2>Interior design is "the art or process of designing"</h2>
                         <span class="underline"></span>
-                        <h4>Insert text here.</h4>                   
+                        <h4>Insert text here.</h4>
                     </div>
                 </div>
                 <div class="row">
@@ -154,7 +223,7 @@
                     </div>
                 </div>
             </div>*@
-        </section>
+            </section>
         <!-- CALL TO ACTION -->
         <section id="cta">
             <!--<div class="container">
@@ -180,7 +249,7 @@
             </div>-->
         </section>
         <!-- CONTACT US -->
-        <section id="contact" class="page-section">
+        @*<section id="contact" class="page-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center space40">
@@ -188,7 +257,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!--<form action="#" method="post" class="contact-form" id="aspxtempl-contact">
+                    <form action="#" method="post" class="contact-form" id="aspxtempl-contact">
                         <div class="col-md-4 col-sm-6">
                             <asp:TextBox ID="txtname" runat="server" placeholder="Your Name..."></asp:TextBox>
 
@@ -207,14 +276,14 @@
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <input type="submit" class="button big green" value="Send Message">
-                        </div>-->
+                        </div>
                     </form>
                 </div>
                 <div class="text-center">
                     <a href="#" class="button green go-top">Go to Top</a>
                 </div>
             </div>
-        </section>
+        </section>*@
         <!-- SITE-FOOTER -->
         <footer class="site-footer">
             <div class="container text-center">
