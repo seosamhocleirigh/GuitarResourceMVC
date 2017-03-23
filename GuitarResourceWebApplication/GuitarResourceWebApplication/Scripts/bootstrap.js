@@ -159,6 +159,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
   $.fn.alert.Constructor = Alert
 
+    
 
   // ALERT NO CONFLICT
   // =================
