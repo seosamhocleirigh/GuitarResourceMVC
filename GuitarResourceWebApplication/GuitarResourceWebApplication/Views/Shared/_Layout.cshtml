@@ -52,15 +52,15 @@
     @*this is script for the note generator button*@
     <script>
         
-        function randItem(arr) {
-            var itemIndex = Math.floor(Math.random() * arr.length);
-            var itemValue = arr[itemIndex]
-            arr.splice(itemIndex, 1);
-            return itemValue;
-        }
+        //function randItem(arr) {
+        //    var itemIndex = Math.floor(Math.random() * arr.length);
+        //    var itemValue = arr[itemIndex]
+        //    arr.splice(itemIndex, 1);
+        //    return itemValue;
+        //}
 
-        var button = document.getElementById("buttonrandom");
-        var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+        //var button = document.getElementById("buttonrandom");
+        //var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
 
         //button.onclick = function () {
         //    alert(numberArray[Math.floor(Math.random() * numberArray.length)]);
@@ -76,12 +76,30 @@
 
             var button = document.getElementById("buttonrandom");
             var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+            var naturalArray = ["A","B", "C", "D", "E", "F", "G"];
+            var accidentalArray = ["A#", "C#", "D#", "F#", "G#"];
             button.onclick = function () {
-                alert(numberArray[Math.floor(Math.random() * numberArray.length)]);
+                //alert(numberArray[Math.floor(Math.random() * numberArray.length)]);
+                //document.getElementsByClassName("outputbox").innerHTML = numberArray[Math.floor(Math.random() * numberArray.length)];
+
+                    //if (document.getElementByName('natural notes').checked) {
+                    //var note = naturalArray[Math.floor(Math.random() * naturalArray.length)]
+                    // $(".outputbox").text(note);
+                    //if (document.getElementByName('accidentals').checked) {
+                    //var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                    //$(".outputbox").text(note);
+                    //}else{
+                    // var note = accidentlArray[Math.floor(Math.random() * accidentalrArray.length)];
+                    //$(".outputbox").text(note);
+
+                var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                $(".outputbox").text(note);
             };
         }); 
-        
 
+       
+
+      
 
     </script>
     
@@ -90,8 +108,8 @@
 
     <!-- SITE HEADER -->
     <div class="site-top" id="top">
-        <div class="site-top-overlay">
-        </div>
+        @*<div class="site-top-overlay">
+        </div>*@
         <div class="site-header">
             <div class="container">
                
@@ -119,6 +137,17 @@
     <section class="note generator button">
 
         <button id="buttonrandom">Generate a random note</button>
+       
+        <div class="outputbox">
+            <p>Find Note: </p>
+
+        </div>
+
+        <form action="">
+            <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+            <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
+        </form>
+
 
       </section>
         
@@ -211,8 +240,8 @@
         
 
         @RenderBody()
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         alert('<Done!>');
-    </script>
+    </script>*@
 </body>
 </html>

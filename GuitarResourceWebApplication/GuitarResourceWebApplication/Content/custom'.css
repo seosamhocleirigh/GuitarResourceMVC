@@ -147,6 +147,11 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+  height: 50px;
+  width: 180px;
+  margin-right: 20px;
+
+ 
 }
 
 input[type="search"] {
@@ -225,7 +230,6 @@ body {
 .show {
     display: block;
 }
-
 
 
 
@@ -404,16 +408,37 @@ span.underline {
   /*background-size: cover;*/
 }
 
-.site-top-overlay {
+/*.site-top-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 7;
+  z-index: 7;*/
   /*background-color: black;*/
   /*background: rgba(0, 0, 0, 0.64);*/
+
+.action {
+
+    color: black;
+    margin-top: 10px;
+    font-size: 10px;
+    
 }
+
+.outputbox {
+    height: 50px;
+    width: 180px;
+    float: right;
+    color: black;
+    border: 2px solid black;
+    background: lightgray;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: black;
+}
+
 
 .site-header {
     padding: 40px 0;
