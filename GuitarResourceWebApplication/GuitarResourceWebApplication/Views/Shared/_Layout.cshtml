@@ -155,9 +155,10 @@
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Index</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#home">Home</a>
+                    <a href="/">Home</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
+                    <a href="/RandomNoteGenerator">RandomNote</a>
                 </div>
                
                 <!-- .main-navigation -->
@@ -167,34 +168,7 @@
        
         </div>
         <!-- .site-top -->
-    <section class="note generator button">
 
-        <button id="buttonrandom">Generate a random note</button>
-       
-        <div class="outputbox">
-            <p>Find Note: </p>
-
-        </div>
-
-        <form action="">
-            <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
-            <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
-        </form>
-
-
-      </section>
-
-    <section class="note string button">
-
-        @*<button id="buttonrandomstring">Generate a random string</button>*@
-        <button type="button" id="buttonrandomstring" class="btn btn-success btn-lg">Generate</button>
-
-        <div class="outputboxstring">
-            <p>Find on string: </p>
-            </div>
-        
-    </section>
-        
         <!-- Adspace top-->
             <section class="adspace-top">
 
@@ -228,20 +202,7 @@
                             
                         </ul>
                     </nav>
-                    <article>
-                        <h1>Hello!</h1>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                        <p>Insert text here.</p>
-                    </article>
+                    @RenderBody()
                                    
                 </div>
                
@@ -283,7 +244,7 @@
         </footer>
         
 
-        @RenderBody()
+       
     @*<script type="text/javascript">
         alert('<Done!>');
     </script>*@
