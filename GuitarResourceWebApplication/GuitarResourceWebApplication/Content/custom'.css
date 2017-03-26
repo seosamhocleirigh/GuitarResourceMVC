@@ -418,12 +418,25 @@ span.underline {
   /*background-color: black;*/
   /*background: rgba(0, 0, 0, 0.64);*/
 
-.action {
+.outputboxstring {
+    
+    
+    height: 50px;
+    width: 180px;
+    float: right;
+    color: black;
+    border: 2px solid black;
+    background: lightgray;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: black;
+}
 
+.action {
     color: black;
     margin-top: 10px;
     font-size: 10px;
-    
 }
 
 .outputbox {

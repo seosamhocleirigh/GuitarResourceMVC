@@ -76,30 +76,63 @@
 
             var button = document.getElementById("buttonrandom");
             var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-            var naturalArray = ["A","B", "C", "D", "E", "F", "G"];
+            var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
             var accidentalArray = ["A#", "C#", "D#", "F#", "G#"];
             button.onclick = function () {
+                if ($("[name='natural notes']").prop("checked")) {
+                    var note = naturalArray[Math.floor(Math.random() * naturalArray.length)];
+                    $(".outputbox").text(note);
+                } else if ($("[name='accidentals']").prop("checked")) {
+                    var note = accidentalArray[Math.floor(Math.random() * accidentalArray.length)];
+                    $(".outputbox").text(note);
+                } else {
+                    var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                    $(".outputbox").text(note);
+                }
+            };
+        });    
+
+               
                 //alert(numberArray[Math.floor(Math.random() * numberArray.length)]);
                 //document.getElementsByClassName("outputbox").innerHTML = numberArray[Math.floor(Math.random() * numberArray.length)];
 
-                    //if (document.getElementByName('natural notes').checked) {
-                    //var note = naturalArray[Math.floor(Math.random() * naturalArray.length)]
-                    // $(".outputbox").text(note);
-                    //if (document.getElementByName('accidentals').checked) {
-                    //var note = numberArray[Math.floor(Math.random() * numberArray.length)];
-                    //$(".outputbox").text(note);
-                    //}else{
-                    // var note = accidentlArray[Math.floor(Math.random() * accidentalrArray.length)];
-                    //$(".outputbox").text(note);
+                //if ($("[name='natural notes']").prop("checked")) {
+                //    var note = naturalArray[Math.floor(Math.random() * naturalArray.length)]
+                //    $(".outputbox").text(note);
+                //    if ($("[name='accidentals']").prop("checked")) {
+                //        var note = accidentalArray[Math.floor(Math.random() * accidentalArray.length)];
+                //        $(".outputbox").text(note);
+                //    } else {
+                //        var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                //        $(".outputbox").text(note);
 
-                var note = numberArray[Math.floor(Math.random() * numberArray.length)];
-                $(".outputbox").text(note);
-            };
-        }); 
+                        //var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                //        //$(".outputbox").text(note);
+                //    };
+                //}; 
 
        
 
       
+
+    </script>
+    <script>
+        $(function () {
+            function randItem(arr) {
+                var itemIndex = Math.floor(Math.random() * arr.length);
+                var itemValue = arr[itemIndex]
+                arr.splice(itemIndex, 1);
+                return itemValue;
+            }
+            var button = document.getElementById("buttonrandomstring");
+            var stringsArray = ["1", "2", "3", "4", "5", "6"];
+            button.onclick = function () {
+
+                var note = stringsArray[Math.floor(Math.random() * stringsArray.length)];
+                $(".outputboxstring").text(note);
+            };
+        }); 
+
 
     </script>
     
@@ -150,6 +183,17 @@
 
 
       </section>
+
+    <section class="note string button">
+
+        @*<button id="buttonrandomstring">Generate a random string</button>*@
+        <button type="button" id="buttonrandomstring" class="btn btn-success btn-lg">Generate</button>
+
+        <div class="outputboxstring">
+            <p>Find on string: </p>
+            </div>
+        
+    </section>
         
         <!-- Adspace top-->
             <section class="adspace-top">
