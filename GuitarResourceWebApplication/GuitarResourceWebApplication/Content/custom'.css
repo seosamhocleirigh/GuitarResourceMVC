@@ -408,6 +408,8 @@ span.underline {
   /*background-size: cover;*/
 }
 
+
+}
 /*.site-top-overlay {
   position: absolute;
   width: 100%;
@@ -415,12 +417,9 @@ span.underline {
   top: 0;
   left: 0;
   z-index: 7;*/
-  /*background-color: black;*/
-  /*background: rgba(0, 0, 0, 0.64);*/
-
+/*background-color: black;*/
+/*background: rgba(0, 0, 0, 0.64);*/
 .outputboxstring {
-    
-    
     height: 50px;
     width: 180px;
     float: right;
