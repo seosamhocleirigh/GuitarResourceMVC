@@ -2,74 +2,86 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Random Generator</h2>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-sm-3">
-            <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <button type="button" id="buttonrandomstring" class="btn btn-warning btn-lg">Generate String</button>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <form action="">
-                <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
-                <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
-            </form>
-        </div>
-        </div>
+  <div class="container-fluid">
+    <div class="col-sm-8 col-sm-8">
+        <h2>Random Generator</h2>
+    </div>
 </div>
 
-        <!-- Outputboxes -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 col-sm-3">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">Find note:</div>
-                        <div class="panel-body" id="outputboxnotes">Find note:</div>
-                    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-5 col-sm-2">
+                <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
+            </div>
+            <div class="col-md-4 col-sm-3">
+                <button type="button" id="buttonrandomstring" class="btn btn-warning btn-lg">Generate String</button>
+            </div>
+            @*<div class="col-md-3 col-sm-3">
+                <form action="">
+                    <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+                    <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
+                </form>*@
+            </div>
+        </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <form action="">
+                    <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+                    <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
+                </form>
+            </div>
+    </div>
+    
+
+    <!-- Outputboxes -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Find note:</div>
+                    <div class="panel-body" id="outputboxnotes">Find note:</div>
                 </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">Find note on string:</div>
-                        <div class="panel-body" id="outputboxstring">Find note on string:</div>
-                    </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Find note on string:</div>
+                    <div class="panel-body" id="outputboxstring">Find note on string:</div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
 
 
-        @*<section class="note generator button">
+    @*<section class="note generator button">
 
-            <button id="buttonrandom">Generate a random note</button>
+        <button id="buttonrandom">Generate a random note</button>
 
-            <div class="outputbox">
-                <p>Find Note: </p>*@
+        <div class="outputbox">
+            <p>Find Note: </p>*@
 
-            @*</div>*@
+    @*</div>*@
 
-            @*<form action="">
-                <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
-                <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
-            </form>*@
+    @*<form action="">
+            <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+            <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
+        </form>*@
 
 
-        @*</section>*@
+    @*</section>*@
 
-        @*<section class="note string button">
+    @*<section class="note string button">
 
-            @*<button id="buttonrandomstring">Generate a random string</button>*@
-            @*<button type="button" id="buttonrandomstring" class="btn btn-success btn-lg">Generate</button>
+        @*<button id="buttonrandomstring">Generate a random string</button>*@
+    @*<button type="button" id="buttonrandomstring" class="btn btn-success btn-lg">Generate</button>
 
-            <div class="outputboxstring">
-                <p>Find on string: </p>
-            </div>*@
+        <div class="outputboxstring">
+            <p>Find on string: </p>
+        </div>*@
 
-        @*</section>*@
+    @*</section>*@
 
 
