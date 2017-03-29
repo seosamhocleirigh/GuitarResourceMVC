@@ -198,7 +198,7 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-    float: right;
+    
 
     
 }
@@ -399,26 +399,9 @@ span.underline {
 /*---------------------------------------------------------
  3. Header
 -------------------------------------------------------- */
-.site-top {
-  /*position: relative;*/
-  background-image: url(../images/guitar_header.jpg);
-  /*background-attachment: fixed;*/
-  /*background-position: center;*/
-  background-repeat: no-repeat;
-  /*background-size: cover;*/
-}
 
 
 
-/*.site-top-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 7;*/
-/*background-color: black;*/
-/*background: rgba(0, 0, 0, 0.64);*/
 .outputboxstring {
     height: 50px;
     width: 180px;
@@ -779,7 +762,9 @@ span.underline {
     border-top-color: #999999;
 }
 
-.social-icons {
+
+
+/*.social-icons {
   margin-top: 30px;
 }
 .social-icons li {
@@ -792,7 +777,7 @@ span.underline {
 .social-icons a:hover
 {
     color: #993333;
-}
+}*/
 
 .copyright-text {
   font-size: 12px;

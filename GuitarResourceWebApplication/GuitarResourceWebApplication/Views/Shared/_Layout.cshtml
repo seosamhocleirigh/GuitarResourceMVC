@@ -30,10 +30,7 @@
     <script>
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
-        //function myFunction() {
-        //    document.getElementById("myDropdown").classList.toggle("show");
-        //}
-
+       
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
@@ -52,78 +49,6 @@
 
            
 
-        <script>
-        $(function () {
-            function randItem(arr) {
-                var itemIndex = Math.floor(Math.random() * arr.length);
-                var itemValue = arr[itemIndex]
-                arr.splice(itemIndex, 1);
-                return itemValue;
-            }
-
-            var button = document.getElementById("buttonrandomnote");
-            var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-            var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
-            var accidentalArray = ["A#", "C#", "D#", "F#", "G#"];
-            button.onclick = function () {
-                if ($("[name='natural notes']").prop("checked")) {
-                    var note = naturalArray[Math.floor(Math.random() * naturalArray.length)];
-                    $("#outputboxnotes").text(note);
-                } else if ($("[name='accidentals']").prop("checked")) {
-                    var note = accidentalArray[Math.floor(Math.random() * accidentalArray.length)];
-                    $("#outputboxnotes").text(note);
-                } else {
-                    var note = numberArray[Math.floor(Math.random() * numberArray.length)];
-                    $("#outputboxnotes").text(note);
-                }
-            };
-        });
-
-    </script>
-               
-                @*//alert(numberArray[Math.floor(Math.random() * numberArray.length)]);
-                //document.getElementsByClassName("outputbox").innerHTML = numberArray[Math.floor(Math.random() * numberArray.length)];
-
-                //if ($("[name='natural notes']").prop("checked")) {
-                //    var note = naturalArray[Math.floor(Math.random() * naturalArray.length)]
-                //    $(".outputbox").text(note);
-                //    if ($("[name='accidentals']").prop("checked")) {
-                //        var note = accidentalArray[Math.floor(Math.random() * accidentalArray.length)];
-                //        $(".outputbox").text(note);
-                //    } else {
-                //        var note = numberArray[Math.floor(Math.random() * numberArray.length)];
-                //        $(".outputbox").text(note);
-
-                        //var note = numberArray[Math.floor(Math.random() * numberArray.length)];
-                //        //$(".outputbox").text(note);
-                //    };
-                //};*@ 
-
-       
-
-      
-
-    
-    <script>
-        $(function () {
-            function randItem(arr) {
-                var itemIndex = Math.floor(Math.random() * arr.length);
-                var itemValue = arr[itemIndex]
-                arr.splice(itemIndex, 1);
-                return itemValue;
-            }
-            var button = document.getElementById("buttonrandomstring");
-            var stringsArray = ["1", "2", "3", "4", "5", "6"];
-            button.onclick = function () {
-
-                var note = stringsArray[Math.floor(Math.random() * stringsArray.length)];
-                $("#outputboxstring").text(note);
-            };
-        }); 
-
-
-    </script>
-    
 </head>
 <body>
 
@@ -155,83 +80,46 @@
       </div>
     </div>
     
-
-
-
-
-    @*<div class="site-top" id="top">
        
-        <div class="site-header">
-            <div class="container">
-               
-                    <a href="#">
-                        
-                        <h2>Guitar Learning Resource</h2>
-                    </a>
-
-                </div>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Index</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="/">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <a href="/RandomNoteGenerator">RandomNote</a>
-                </div>*@
                
                 <!-- .main-navigation -->
-            </nav>
-        </div>
+          
         <!-- .site-header -->
        
-        </div>
+       
         <!-- .site-top -->
 
         <!-- Adspace top-->
-            <section class="adspace-top">
 
-                @*<div class="adspace">*@
-                   
+            <section class="adspace-top text-center">
+
+                     
                         <p> Placeholder for adspace!</p>
-                  
-                   
-               @*</div>*@
+
+              
 
             </section>
         <!-- SERVICES -->
         
         <!-- POSTS -->
-        <section id="posts" class="page-section">
+        
             
             
                 <div class="container">
                    
-                    @*<nav>
-                        <ul>
-                            
-                                <li><a href="#">Hi</a></li>
-                                <li><a href="#">Hi</a></li>
-                                <li><a href="#">Hi</a></li>
-                                <li><a href="#">Hi</a></li>
-                                <li><a href="#">Hi</a></li>
-                                <li><a href="#">Hi</a></li>
-                                <li><a href="#">Test</a></li>
-                                <li><a href="#">Test2</a></li>
-                            
-                        </ul>
-                    </nav>*@
+                    
                     @RenderBody()
                                    
                 </div>
                
-            </section>
-        <!-- CALL TO ACTION -->
-        <section id="cta">
            
-        </section>
+        <!-- CALL TO ACTION -->
+      
+
         <!-- CONTACT US -->
+
         <!--Adspace Bottom-->
-    <section class="adspace-bottom">
+    <section class="adspace-bottom text-center">
         
                    
                 <p> Placeholder for adspace!</p>
@@ -240,31 +128,32 @@
     </section>
            
         <!-- SITE-FOOTER -->
-        <footer class="container-fluid text-center">
+        <footer class="container-fluid">
+
+            <div class="text-center center-block">
+                <p class="txt-railway">Social Media</p>
+                <br>
+                <a href="#">
+                    <i id="social-fb" class= "fa fa-facebook-square fa-3x social-icons"></i>
+                </a>
+                <a href="#">
+                    <i id="social-tw" class="fa fa-twitter-square fa-3x social"></i>
+                </a>
+                <a href="#">
+                <i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i>
+                </a>
+                <a href="#">
+                    <i id="social-em" class="fa fa-envelope-square fa-3x social"></i>
+                </a>
+            </div>
+            <hr>
             
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="social-icons">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-linkedin"></a></li>
-                            <li><a href="#" class="fa fa-behance"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-rss"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                   </div>
-                </div>
+             
             
         </footer>
         
 
        
-    @*<script type="text/javascript">
-        alert('<Done!>');
-    </script>*@
+   
 </body>
 </html>
