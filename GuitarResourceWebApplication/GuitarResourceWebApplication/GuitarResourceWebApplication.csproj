@@ -297,6 +297,7 @@
     <Content Include="Views\Shared\_Layout_DEPRECATED.cshtml" />
     <Content Include="Views\Home\Index_DEPRECATED.cshtml" />
     <Content Include="Views\RandomNoteGenerator\Index.cshtml" />
+    <Content Include="Views\SheetMusicLearningTool\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
