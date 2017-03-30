@@ -2,7 +2,58 @@
 @{
     ViewBag.Title = "Index";
 }
+<script>
 
-<h2>Index</h2>
+    VF = Vex.Flow;
 
 
+var div = document.getElementById("boo")
+var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+
+
+renderer.resize(500, 500);
+var context = renderer.getContext();
+context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+
+var stave = new VF.Stave(10, 40, 400);
+
+stave.addClef("treble").addTimeSignature("4/4");
+
+stave.setContext(context).draw();
+
+var notes = [
+  new VF.StaveNote({ keys: ["e/4"], duration: "q" }),
+
+  new VF.StaveNote({ keys: ["e/4"], duration: "q" }),
+
+  new VF.StaveNote({ keys: ["e/4"], duration: "q" }),
+
+  new VF.StaveNote({ keys: ["e/4"], duration: "q" })
+];
+
+var voice = new VF.Voice({num_beats: 4,  beat_value: 4});
+voice.addTickables(notes);
+
+var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+
+voice.draw(context, stave);
+</script>
+
+<div class="containe-fluid">
+    <div class="row">
+        <div class="col-sm-8 col-sm-8 text-center">
+            <h2>Sheet Music Tool</h2>
+        </div>
+    </div>
+    </div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-sm-7" style="padding: 12px 0px 12px 0px;">
+            <div id="boo">
+
+            </div>
+        </div>
+    </div>
+</div>
