@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GuitarResourceWebApplication.Controllers
 {
-    public class RandomNoteGenerator : Controller
+    public class RandomNoteGeneratorController : Controller
     {
         // GET: RandomNoteGenerator
         public ActionResult Index()
