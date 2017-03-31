@@ -8,7 +8,7 @@ namespace GuitarResourceWebApplication.Controllers
 {
     public class SheetMusicLearningTool : Controller
     {
-        // GET: SheetMusicLearningTool
+        // GET: RandomNoteGenerator
         public ActionResult Index()
         {
             return View();
