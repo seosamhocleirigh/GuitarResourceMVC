@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace GuitarResourceWebApplication.Controllers
 {
-    public class RandomNoteGeneratorController : Controller
+    public class SheetMusicLearningTool : Controller
     {
-        // GET: RandomNoteGenerator
+        // GET: SheetMusicLearningTool
         public ActionResult Index()
         {
             return View();
