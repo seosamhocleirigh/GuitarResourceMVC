@@ -3,36 +3,39 @@
     ViewBag.Title = "Index";
 }
 
+
 <script>
+    
+    $(function () {
+        function randItem(arr) {
+            var itemIndex = Math.floor(Math.random() * arr.length);
+            var itemValue = arr[itemIndex]
+            arr.splice(itemIndex, 1);
+            return itemValue;
+        }
 
-        $(function () {
-            function randItem(arr) {
-                var itemIndex = Math.floor(Math.random() * arr.length);
-                var itemValue = arr[itemIndex]
-                arr.splice(itemIndex, 1);
-                return itemValue;
+        var button = document.getElementById("buttonrandomnote");
+        var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+        var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
+        var accidentalArray = ["A#", "C#", "D#", "F#", "G#"];
+        var stringsArray = ["1", "2", "3", "4", "5", "6"];
+        button.onclick = function () {
+            if ($("[name='natural notes']").prop("checked")) {
+                var note = naturalArray[Math.floor(Math.random() * naturalArray.length)];
+                $("#outputboxnotes").text(note);
+            } else if ($("[name='strings']").prop("checked")) {
+                var note = stringsArray[Math.floor(Math.random() * stringsArray.length)];
+                $("#outputboxstring").text(note);
+            } else {
+                var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                $("#outputboxnotes").text(note);
             }
+        };
+    });
 
-            var button = document.getElementById("buttonrandomnote");
-            var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-            var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
-            var accidentalArray = ["A#", "C#", "D#", "F#", "G#"];
-            button.onclick = function () {
-                if ($("[name='natural notes']").prop("checked")) {
-                    var note = naturalArray[Math.floor(Math.random() * naturalArray.length)];
-                    $("#outputboxnotes").text(note);
-                } else if ($("[name='accidentals']").prop("checked")) {
-                    var note = accidentalArray[Math.floor(Math.random() * accidentalArray.length)];
-                    $("#outputboxnotes").text(note);
-                } else {
-                    var note = numberArray[Math.floor(Math.random() * numberArray.length)];
-                    $("#outputboxnotes").text(note);
-                }
-            };
-        });
 
 </script>
-<script>
+@*<script>
      $(function () {
          function randItem(arr) {
              var itemIndex = Math.floor(Math.random() * arr.length);
@@ -50,11 +53,11 @@
      });
 
 
-</script>
+</script>*@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-8 col-sm-8">
+        <div class="col-sm-8 col-sm-offset-2">
             <img src=/images/random_generator_heading.jpg class="img-responsive" style="padding: 12px 0px 12px 0px;" />
         </div>
     </div>
@@ -62,32 +65,39 @@
 
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-sm-3">
+        <div class="row" style="margin-right: 1px;padding-right: 180px;padding-bottom: 25px;padding-top: 25px;">
+            <div class="col-md-3 col-md-offset-4 text-center">
                 <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
             </div>
-            <div class="col-md-3 col-sm-3">
+            <div class="col-md-3">
+                <form action="">
+                    <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+                    <input type="checkbox" name="strings" value="strings" /> Generate string
+                </form>
+                @*<div class="col-md-3 col-sm-3">
                 <button type="button" id="buttonrandomstring" class="btn btn-warning btn-lg">Generate String</button>
-            </div>
-            
+            </div>*@
+
             </div>
         </div>
-    <div class="container-fluid">
+        </div>
+
+    @*<div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-7">
                 <form action="">
                     <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
-                    <input type="checkbox" name="accidentals" value="accidentals" /> Generate accidentals only
+                    <input type="checkbox" name="strings" value="strings" /> Generate string
                 </form>
             </div>
            </div>
-        </div>
+        </div>*@
     
 
     <!-- Outputboxes -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3 col-sm-3">
+            <div class="col-sm-3 col-sm-3 col-sm-offset-3" 
                 <div class="panel panel-primary">
                     <div class="panel-heading">Find note:</div>
                     <div class="panel-body" id="outputboxnotes">Find note:</div>

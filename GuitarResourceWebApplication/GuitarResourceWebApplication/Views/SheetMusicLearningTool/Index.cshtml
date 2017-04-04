@@ -6,6 +6,8 @@
 
 <script>
 
+    $(document).ready(function () {
+    
     VF = Vex.Flow;
 
 
@@ -34,6 +36,8 @@
     var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
 
     voice.draw(context, stave);
+
+    })
 </script>
 
 <div class="containe-fluid">
