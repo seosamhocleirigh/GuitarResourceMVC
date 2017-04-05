@@ -15,7 +15,7 @@
         }
 
         var button = document.getElementById("buttonrandomnote");
-        var numberArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+        var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
         var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
         var accidentalArray = ["A#", "C#", "D#", "F#", "G#"];
         var stringsArray = ["1", "2", "3", "4", "5", "6"];
@@ -24,7 +24,7 @@
                 var note = naturalArray[Math.floor(Math.random() * naturalArray.length)];
                 $("#outputboxnotes").text(note);
             } else {
-                var note = numberArray[Math.floor(Math.random() * numberArray.length)];
+                var note = noteArray[Math.floor(Math.random() * noteArray.length)];
                 $("#outputboxnotes").text(note);
             }
             if ($("[name='strings']").prop("checked")) {

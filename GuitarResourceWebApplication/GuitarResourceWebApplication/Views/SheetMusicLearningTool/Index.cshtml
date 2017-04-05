@@ -3,41 +3,48 @@
     ViewBag.Title = "Index";
 }
 
+ @*Notes can be suffixed by the following accidentals: #, ##, @, @@, and n signifying sharp, double-sharp, flat, double-flat, and natural, respectively.*@ 
 
 <script>
 
     $(document).ready(function () {
-    
-    VF = Vex.Flow;
+        
+            noteGen("f", "2");
+      
+        
+    });
+
+    function noteGen(note, string) {
+        VF = Vex.Flow;
 
 
-    var div = document.getElementById("boo")
-    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+        var div = document.getElementById("boo")
+        var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
 
 
-    renderer.resize(400, 200);
-    var context = renderer.getContext();
-    context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+        renderer.resize(400, 200);
+        var context = renderer.getContext();
+        context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
 
-    var stave = new VF.Stave(10, 40, 400);
+        var stave = new VF.Stave(10, 40, 400);
 
-    stave.addClef("treble").addTimeSignature("4/4");
+        stave.addClef("treble").addTimeSignature("4/4");
 
-    stave.setContext(context).draw();
+        stave.setContext(context).draw();
 
-    var notes = [
-        new VF.StaveNote({ keys: ["e/5"], duration: "w" }),
+        var notes = [
+            new VF.StaveNote({ keys: [note+"/"+string], duration: "w" }),
 
-    ];
+        ];
 
-    var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
-    voice.addTickables(notes);
+        var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
+        voice.addTickables(notes);
 
-    var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+        var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
 
-    voice.draw(context, stave);
+        voice.draw(context, stave);
 
-    })
+    }
 </script>
 
 <div class="containe-fluid">
@@ -62,7 +69,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4 text-center" style="padding-bottom: 20px;">
-            <button type="button" id="buttonrandomsheetmusic" class="btn btn-warning btn-lg">Generate random note and string</button>
+            <button type="button" id="buttonrandomsheetmusic" class="btn btn-warning btn-lg">-Generate-</button>
         </div>
     </div>
 </div>
