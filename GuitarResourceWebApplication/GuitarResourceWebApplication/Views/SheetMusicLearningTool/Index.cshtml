@@ -4,46 +4,78 @@
 }
 
  @*Notes can be suffixed by the following accidentals: #, ##, @, @@, and n signifying sharp, double-sharp, flat, double-flat, and natural, respectively.*@ 
-
 <script>
 
+    var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+    var stringsArray = ["1", "2", "3", "4", "5", "6"];
+    var noteArrayCopy = noteArray.slice();
+    var canvas;
+
+    function clearCanvas() {
+        canvas.innerText = "";
+    }
+
+    function resetNoteArray() {
+        if (noteArrayCopy.length === 0)
+            noteArrayCopy = noteArray.slice();
+    }
+
+    function pickRandomItemFromArray(array) {
+        var itemIndex = Math.floor(Math.random() * array.length);
+        return array[itemIndex]
+    }
+
+    function spliceRandomItemFromArray(array) {
+        var randomItem = pickRandomItemFromArray(array);
+        var index = array.indexOf(randomItem);
+        array.splice(index, 1);
+        return randomItem;
+    }
+
+    function generateRandomNote() {
+        var note = spliceRandomItemFromArray(noteArrayCopy);
+        resetNoteArray();
+        return note;
+    }
+
+    function generateRandomNoteAndDrawOnStave() {
+        var note = generateRandomNote();
+        clearCanvas();
+        drawNoteOnStave(note, "2");
+    }
+
     $(document).ready(function () {
-        
-            noteGen("f", "2");
+        canvas = document.getElementById("boo");
+        generateRandomNoteAndDrawOnStave();
       
-        
+        var button = document.getElementById("buttonrandomsheetmusic");
+        button.onclick = function () {
+            generateRandomNoteAndDrawOnStave();
+        }
     });
 
-    function noteGen(note, string) {
+    function drawNoteOnStave(note, string) {
         VF = Vex.Flow;
 
-
-        var div = document.getElementById("boo")
-        var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
-
+        var renderer = new VF.Renderer(canvas, VF.Renderer.Backends.SVG);
 
         renderer.resize(400, 200);
         var context = renderer.getContext();
         context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
 
         var stave = new VF.Stave(10, 40, 400);
-
         stave.addClef("treble").addTimeSignature("4/4");
-
         stave.setContext(context).draw();
 
         var notes = [
             new VF.StaveNote({ keys: [note+"/"+string], duration: "w" }),
-
         ];
 
         var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
         voice.addTickables(notes);
 
         var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
-
         voice.draw(context, stave);
-
     }
 </script>
 
