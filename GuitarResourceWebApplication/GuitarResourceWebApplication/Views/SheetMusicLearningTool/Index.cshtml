@@ -9,6 +9,7 @@
     var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
     var stringsArray = ["1", "2", "3", "4", "5", "6"];
     var noteArrayCopy = noteArray.slice();
+    var stringsArrayCopy = stringsArray.slice();
     var canvas;
 
     function clearCanvas() {
@@ -18,7 +19,18 @@
     function resetNoteArray() {
         if (noteArrayCopy.length === 0)
             noteArrayCopy = noteArray.slice();
+       
     }
+
+    //function shuffleArray(array) {
+    //    var j, x, i;
+    //    for (i = a.length; i; i--) {
+    //        j = Math.floor(Math.random() * i);
+    //        x = a[i - 1];
+    //        a[i - 1] = a[j];
+    //        a[j] = x;
+    //    }
+    //}
 
     function pickRandomItemFromArray(array) {
         var itemIndex = Math.floor(Math.random() * array.length);
@@ -39,9 +51,10 @@
     }
 
     function generateRandomNoteAndDrawOnStave() {
+        var string = generateRandomstring();
         var note = generateRandomNote();
         clearCanvas();
-        drawNoteOnStave(note, "2");
+        drawNoteOnStave(note, string);
     }
 
     $(document).ready(function () {
@@ -54,12 +67,46 @@
         }
     });
 
+
+    function clearCanvas() {
+        canvas.innerText = "";
+    }
+
+    function resetstringsArray() {
+        if (stringsArrayCopy.length === 0)
+            stringsArrayCopy = stringsArray.slice();
+    }
+
+    function generateRandomstring() {
+        var string = spliceRandomItemFromArray(stringsArrayCopy);
+        resetstringsArray();
+        return string;
+    }
+
+    function generateRandomstringAndDrawOnStave() {
+        var string = generateRandomstring();
+        clearCanvas();
+        drawstringOnStave("");
+    }
+
+    $(document).ready(function () {
+        canvas = document.getElementById("boo");
+        generateRandomstringAndDrawOnStave();
+
+        var button = document.getElementById("buttonrandomsheetmusic");
+        button.onclick = function () {
+            generateRandomstringAndDrawOnStave("", string);
+        }
+    });
+
+
+
     function drawNoteOnStave(note, string) {
         VF = Vex.Flow;
 
         var renderer = new VF.Renderer(canvas, VF.Renderer.Backends.SVG);
 
-        renderer.resize(400, 200);
+        renderer.resize(400, 300);
         var context = renderer.getContext();
         context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
 
