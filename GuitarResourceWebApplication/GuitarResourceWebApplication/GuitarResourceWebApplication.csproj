@@ -212,7 +212,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\custom%27.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\owl-carousel.css" />
@@ -249,7 +248,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\GuitarResourceLibrary\Common.js" />
+    <Content Include="Scripts\GuitarResourceLibrary\Common\RandomNoteFunctions.js" />
     <Content Include="Scripts\GuitarResourceLibrary\RandomNoteGenerator.js" />
     <Content Include="Scripts\vexflow-1.2.83.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -259,11 +258,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\plugins.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

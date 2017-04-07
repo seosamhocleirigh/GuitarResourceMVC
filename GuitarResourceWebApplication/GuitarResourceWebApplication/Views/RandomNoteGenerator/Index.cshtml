@@ -3,60 +3,59 @@
     ViewBag.Title = "Index";
 }
 
-
 <script>
 
-    var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-    var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
-    var stringsArray = ["1", "2", "3", "4", "5", "6"];
-    var noteArrayCopy = noteArray.slice();
-    var naturalArrayCopy = naturalArray();
-    var stringsArrayCopy = stringsArray.slice()
+    //var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+    //var naturalArray = ["A", "B", "C", "D", "E", "F", "G"];
+    //var stringsArray = ["1", "2", "3", "4", "5", "6"];
+    //var noteArrayCopy = noteArray.slice();
+    //var naturalArrayCopy = naturalArray();
+    //var stringsArrayCopy = stringsArray.slice()
+
+    //function resetnoteArray() {
+    //    if (noteArrayCopy.length === 0)
+    //        noteArrayCopy = noteArray.slice();
+    //}
+
+    //function pickRandomItemFromArray(array) {
+    //    var itemIndex = Math.floor(Math.random() * array.length);
+    //    return array[itemIndex]
+    //}
+
+    //function spliceRandomItemFromArray(array) {
+    //    var randomItem = pickRandomItemFromArray(array);
+    //    var index = array.indexOf(randomItem);
+    //    array.splice(index, 1);
+    //    return randomItem;
+    //}
+
+
+    //function generateNoteRandom() {
+    //    var note = spliceRandomItemFromArray(noteArrayCopy);
+    //    resetnoteArray();
+    //    return note;
+    //    $("#outputboxnotes").text(note);
+    //}
+
+    //function generateRandomNote() {
+    //    var string = generateNoteRandom();
+    //}
 
 
 
-    function resetnoteArray() {
-        if (noteArrayCopy.length === 0)
-            noteArrayCopy = noteArray.slice();
-    }
-
-    function pickRandomItemFromArray(array) {
-        var itemIndex = Math.floor(Math.random() * array.length);
-        return array[itemIndex]
-    }
-
-    function spliceRandomItemFromArray(array) {
-        var randomItem = pickRandomItemFromArray(array);
-        var index = array.indexOf(randomItem);
-        array.splice(index, 1);
-        return randomItem;
-    }
-
-
-    function generateNoteRandom() {
-        var note = spliceRandomItemFromArray(noteArrayCopy);
-        resetnoteArray();
-        return note;
-        $("#outputboxnotes").text(note);
-    }
-
-    function generateRandomNote() {
-        var string = generateNoteRandom();
-    }
-
-    var button = document.getElementById("buttonrandomnote");
-    button.onclick = function () {
-        if ($("[name='natural notes']").prop("checked")) {
-            var note = generateRandomNote();
-        } else {
-            var note = noteArray[Math.floor(Math.random() * noteArray.length)];
-            $("#outputboxnotes").text(note);
-        }
-        if ($("[name='strings']").prop("checked")) {
-            var note = stringsArray[Math.floor(Math.random() * stringsArray.length)];
-            $("#outputboxstring").text(note);
-        };
-
+    //var button = document.getElementById("buttonrandomnote");
+    //button.onclick = function () {
+    //    if ($("[name='natural notes']").prop("checked")) {
+    //        var note = generateRandomNote();
+    //    } else {
+    //        var note = noteArray[Math.floor(Math.random() * noteArray.length)];
+    //        $("#outputboxnotes").text(note);
+    //    }
+    //    if ($("[name='strings']").prop("checked")) {
+    //        var note = stringsArray[Math.floor(Math.random() * stringsArray.length)];
+    //        $("#outputboxstring").text(note);
+    //    };
+    //}
 
 
     //$(function () {
@@ -88,8 +87,6 @@
     //        };
     //    };
     //});            
-      
-
 
 </script>
 
@@ -100,48 +97,40 @@
             <img src=/images/random_generator_heading.jpg class="img-responsive" style="padding: 12px 0px 12px 0px;" />
         </div>
     </div>
-    </div>
+</div>
 
 
-    <div class="container-fluid">
-        <div class="row" style="margin-right: 1px;padding-right: 180px;padding-bottom: 25px;padding-top: 25px;">
-            <div class="col-md-3 col-md-offset-4 text-center">
-                <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
-            </div>
-            <div class="col-md-3">
-                <form action="">
-                    <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
-                    <input type="checkbox" name="strings" value="strings" /> Generate string
-                </form>
+<div class="container-fluid">
+    <div class="row" style="margin-right: 1px;padding-right: 180px;padding-bottom: 25px;padding-top: 25px;">
+        <div class="col-md-3 col-md-offset-4 text-center">
+            <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
+        </div>
+        <div class="col-md-3">
+            <form action="">
+                <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+                <input type="checkbox" name="strings" value="strings" /> Generate string
+            </form>
               
 
+        </div>
+    </div>
+</div>
+
+
+<!-- Outputboxes -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-sm-3 col-sm-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Find note:</div>
+                <div class="panel-body" id="outputboxnotes">Find note:</div>
             </div>
         </div>
-        </div>
-
-  
-    
-
-    <!-- Outputboxes -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 col-sm-3 col-sm-offset-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Find note:</div>
-                    <div class="panel-body" id="outputboxnotes">Find note:</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Find note on string:</div>
-                    <div class="panel-body" id="outputboxstring">Find note on string:</div>
-                </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Find note on string:</div>
+                <div class="panel-body" id="outputboxstring">Find note on string:</div>
             </div>
         </div>
     </div>
-
-
-
-
-
-  
+</div>

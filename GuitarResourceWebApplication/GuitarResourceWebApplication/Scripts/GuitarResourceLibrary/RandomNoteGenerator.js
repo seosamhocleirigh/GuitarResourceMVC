@@ -4,13 +4,13 @@
         /*
 
         <script src="/Scripts/GuitarResourceLibrary/RandomNoteGenerator.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            RandomNoteGenerator.init();
-        });
-    </script>
+        <script type="text/javascript">
+            $(function () {
+                RandomNoteGenerator.init();
+            });
+        </script>
 
-    <p>
+        <p>
             <div type="button" id="ButtonNextNote" class="btn btn-default">
                 Click Me
             </div>
@@ -20,14 +20,15 @@
         */
 
 
-        settings: {
-            buttonNextNote: $("#ButtonNextNote"),
-            randomNoteElement: $("#RandomNote")
+        defaults: {
+            buttonNextNote: $("#buttonrandomnote"),
+            randomNoteOutputElement: $("#outputboxnotes")
         },
         
-        init: function () {
+        init: function (settings) {
             console.log("Random note generator initialising");
-            randomNoteGeneratorSettings = RandomNoteGenerator.settings
+            //randomNoteGeneratorSettings = RandomNoteGenerator.settings
+            $.extend(RandomNoteGenerator.defaults, settings);
             RandomNoteGenerator.bindUIActions();
         },
 
@@ -41,11 +42,6 @@
         outputRandomNoteToUI: function () {
             console.log("output to UI fired");
             var randomNote = RandomNoteGenerator.generateRandomNote();
-            $(randomNoteGeneratorSettings.randomNoteElement.selector).text(randomNote);
-        },
-
-        generateRandomNote: function () {
-            console.log("generating random note");
-            return "A";
+            $(randomNoteGeneratorSettings.randomNoteOutputElement.selector).text(randomNote);
         }
     };
