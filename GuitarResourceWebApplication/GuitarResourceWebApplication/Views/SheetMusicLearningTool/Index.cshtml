@@ -32,10 +32,10 @@
     //    }
     //}
 
-    function pickRandomItemFromArray(array) {
-        var itemIndex = Math.floor(Math.random() * array.length);
-        return array[itemIndex]
-    }
+    //function pickRandomItemFromArray(array) {
+    //    var itemIndex = Math.floor(Math.random() * array.length);
+    //    return array[itemIndex];
+    //}
 
     function spliceRandomItemFromArray(array) {
         var randomItem = pickRandomItemFromArray(array);
@@ -58,20 +58,19 @@
     }
 
     $(document).ready(function () {
-        canvas = document.getElementById("boo");
-        generateRandomNoteAndDrawOnStave();
+        var guitarResource = new GuitarResource();
+        guitarResource.pickRandomItemFromArray(noteArray);
+        //canvas = document.getElementById("boo");
+        //generateRandomNoteAndDrawOnStave();
       
-        var button = document.getElementById("buttonrandomsheetmusic");
-        button.onclick = function () {
-            generateRandomNoteAndDrawOnStave();
-        }
+        //var button = document.getElementById("buttonrandomsheetmusic");
+        //button.onclick = function () {
+        //    generateRandomNoteAndDrawOnStave();
+        //}
     });
 
 
-    function clearCanvas() {
-        canvas.innerText = "";
-    }
-
+   
     function resetstringsArray() {
         if (stringsArrayCopy.length === 0)
             stringsArrayCopy = stringsArray.slice();
@@ -95,7 +94,7 @@
 
         var button = document.getElementById("buttonrandomsheetmusic");
         button.onclick = function () {
-            generateRandomstringAndDrawOnStave("", string);
+            generateRandomstringAndDrawOnStave(string);
         }
     });
 
