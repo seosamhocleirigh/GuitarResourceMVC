@@ -31,30 +31,28 @@ var RandomNoteGenerator = {
 
     outputRandomNoteToUI: function () {
         console.log("output to UI fired");
+        var randomNote = "";
+
         if ($("[name='natural notes']").prop("checked")) {
-            var randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.naturalArrayCopy);
-            $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
+            randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.naturalArrayCopy);
         } else {
-            var randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.noteArrayCopy);
-            $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
+            randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.noteArrayCopy);
         }
+
+        $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
+
         if ($("[name='strings']").prop("checked")) {
-            var randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.stringsArrayCopy);
-            $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
-        
+            randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.stringsArrayCopy);
+            $(RandomNoteGenerator.defaults.randomStringOutputElement.selector).text(randomNote);
         }
+
         if (RandomNoteGenerator.naturalArrayCopy.length === 0)
             RandomNoteGenerator.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
+        if (RandomNoteGenerator.noteArrayCopy.length === 0)
+            RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+        if (RandomNoteGenerator.stringsArrayCopy.length === 0)
+            RandomNoteGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
     }
-}
-if (RandomNoteGenerator.noteArrayCopy.length === 0)
-    RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
-    }
-}
-if (RandomNoteGenerator.stringsArrayCopy.length === 0)
-    RandomNoteGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
-    }
-}
 };
   
 
