@@ -38,9 +38,23 @@ var RandomNoteGenerator = {
             var randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.noteArrayCopy);
             $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
         }
-        if (RandomNoteGenerator.noteArrayCopy.length === 0)
-            RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+        if ($("[name='strings']").prop("checked")) {
+            var randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.stringsArrayCopy);
+            $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
+        
+        }
+        if (RandomNoteGenerator.naturalArrayCopy.length === 0)
+            RandomNoteGenerator.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
     }
+}
+if (RandomNoteGenerator.noteArrayCopy.length === 0)
+    RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+    }
+}
+if (RandomNoteGenerator.stringsArrayCopy.length === 0)
+    RandomNoteGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
+    }
+}
 };
   
 
