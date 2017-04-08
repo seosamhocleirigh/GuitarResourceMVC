@@ -5,21 +5,27 @@ var RandomNoteLibrary = {
     naturalArray: ["A", "B", "C", "D", "E", "F", "G"],
     stringsArray: ["1", "2", "3", "4", "5", "6"],
 
+
+
+    copyNoteArray: function () {
+        return RandomNoteLibrary.noteArray.slice();
+    },
+
     pickRandomItemFromArray: function (array) {
         var itemIndex = Math.floor(Math.random() * array.length);
         return array[itemIndex];
     },
 
     spliceRandomItemFromArray: function (array) {
-        var randomItem = pickRandomItemFromArray(array);
+        var randomItem = RandomNoteLibrary.pickRandomItemFromArray(array);
         var index = array.indexOf(randomItem);
         array.splice(index, 1);
         return randomItem;
     },
 
     generateRandomNote: function (array) {
-        var note = spliceRandomItemFromArray(array);
-        resetnoteArray();
+        var note = RandomNoteLibrary.spliceRandomItemFromArray(array);
+        //RandomNoteLibrary.resetNoteArray(array);
         return note;
     }
 

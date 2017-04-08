@@ -1,24 +1,8 @@
-﻿var randomNoteGeneratorSettings,
-    RandomNoteGenerator = {
+﻿
+    var RandomNoteGenerator = {
 
-        /*
 
-        <script src="/Scripts/GuitarResourceLibrary/RandomNoteGenerator.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(function () {
-                RandomNoteGenerator.init();
-            });
-        </script>
-
-        <p>
-            <div type="button" id="ButtonNextNote" class="btn btn-default">
-                Click Me
-            </div>
-            <span>Random Note: </span><label id="RandomNote"></label>
-        </p>
-
-        */
-
+        noteArrayCopy:[],
 
         defaults: {
             buttonNextNote: $("#buttonrandomnote"),
@@ -27,21 +11,23 @@
         
         init: function (settings) {
             console.log("Random note generator initialising");
-            //randomNoteGeneratorSettings = RandomNoteGenerator.settings
             $.extend(RandomNoteGenerator.defaults, settings);
+            RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
             RandomNoteGenerator.bindUIActions();
         },
 
         bindUIActions: function () {
             console.log("binding UI");
-            $(randomNoteGeneratorSettings.buttonNextNote.selector).click(function () {
+            $(RandomNoteGenerator.defaults.buttonNextNote.selector).click(function () {
                 RandomNoteGenerator.outputRandomNoteToUI();
             })
         },
 
         outputRandomNoteToUI: function () {
             console.log("output to UI fired");
-            var randomNote = RandomNoteGenerator.generateRandomNote();
-            $(randomNoteGeneratorSettings.randomNoteOutputElement.selector).text(randomNote);
+            var randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.noteArrayCopy);
+            $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
+            if (RandomNoteGenerator.noteArrayCopy.length === 0) 
+                RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
         }
     };
