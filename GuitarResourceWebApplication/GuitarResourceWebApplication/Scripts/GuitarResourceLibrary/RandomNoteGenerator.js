@@ -6,13 +6,17 @@
 
         defaults: {
             buttonNextNote: $("#buttonrandomnote"),
-            randomNoteOutputElement: $("#outputboxnotes")
+            randomNoteOutputElement: $("#outputboxnotes"),
+            randomStringOutputElement: $("#outputboxstring")
+
         },
         
         init: function (settings) {
             console.log("Random note generator initialising");
             $.extend(RandomNoteGenerator.defaults, settings);
             RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+            RandomNoteGenerator.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
+            RandomNoteGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
             RandomNoteGenerator.bindUIActions();
         },
 

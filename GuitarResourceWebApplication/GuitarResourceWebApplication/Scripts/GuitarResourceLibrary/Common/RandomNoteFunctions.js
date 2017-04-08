@@ -10,6 +10,14 @@ var RandomNoteLibrary = {
     copyNoteArray: function () {
         return RandomNoteLibrary.noteArray.slice();
     },
+    copyNaturalArray: function () {
+        return RandomNoteLibrary.naturalArray.slice();
+    },
+    copyStringsArray: function () {
+        return RandomNoteLibrary.stringsArray.slice();
+    },
+
+
 
     pickRandomItemFromArray: function (array) {
         var itemIndex = Math.floor(Math.random() * array.length);
