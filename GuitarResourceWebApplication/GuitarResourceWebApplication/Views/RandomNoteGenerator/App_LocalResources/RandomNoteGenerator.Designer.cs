@@ -22,14 +22,14 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Index {
+    public class RandomNoteGenerator {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Index() {
+        internal RandomNoteGenerator() {
         }
         
         /// <summary>
@@ -39,7 +39,8 @@ namespace Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GuitarResourceWebApplication.Views.Home.App_LocalResources.Index", typeof(Index).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GuitarResourceWebApplication.Views.RandomNoteGenerator.App_LocalResources.RandomN" +
+                            "oteGenerator", typeof(RandomNoteGenerator).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +62,13 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is a growing/developing website that caters for learning guitar players..
+        ///   Looks up a localized string similar to This tool generates random notes and has some options like: generate a random string and only generate natural notes.  The purpose is to get a random note that you must find all over the guitar neck.  You can work up and down each string finding all the notes or naming them as an excersize but finding them all on command is a far better way and is far more practical.
+        ///
+        ///In a musical situation you might be told to play an A sharp or B flat, if you&apos;ve been practing using a tool like this you will have no prob [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string ParagraphIntroduction {
+        public static string ParagraphRandomNoteTool {
             get {
-                return ResourceManager.GetString("ParagraphIntroduction", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to At present there is only a random note generator and a sheet music random note generator but there are plans for many, many more so keep an eye for updates..
-        /// </summary>
-        public static string ParagraphMoreToCome {
-            get {
-                return ResourceManager.GetString("ParagraphMoreToCome", resourceCulture);
+                return ResourceManager.GetString("ParagraphRandomNoteTool", resourceCulture);
             }
         }
     }
