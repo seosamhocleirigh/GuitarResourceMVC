@@ -260,6 +260,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\GuitarResourceLibrary\Common\RandomNoteFunctions.js" />
     <Content Include="Scripts\GuitarResourceLibrary\Common\SheetMusicFunctions.js" />
+    <Content Include="Scripts\GuitarResourceLibrary\Common\SheetMusicGenerator.js" />
+    <Content Include="Scripts\GuitarResourceLibrary\Common\VexFlowDrawSheetMusic.js" />
     <Content Include="Scripts\GuitarResourceLibrary\RandomNoteGenerator.js" />
     <Content Include="Scripts\vexflow-1.2.83.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

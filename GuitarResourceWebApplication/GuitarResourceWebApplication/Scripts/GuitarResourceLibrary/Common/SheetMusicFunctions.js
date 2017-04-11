@@ -1,15 +1,15 @@
 ﻿
 var SheetMusicLibrary = {
 
-    noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
-    stringsArray = ["1", "2", "3", "4", "5", "6"]
+    noteArray: ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
+    stringsArray: ["1", "2", "3", "4", "5", "6"],
 
 
     copyNoteArray: function () {
-        return RandomNoteLibrary.noteArray.slice();
+        return SheetMusicLibrary.noteArray.slice();
     },
     copyStringsArray: function () {
-        return RandomNoteLibrary.stringsArray.slice();
+        return SheetMusicLibrary.stringsArray.slice();
     },
 
     pickRandomItemFromArray: function (array) {
@@ -24,15 +24,21 @@ var SheetMusicLibrary = {
         return randomItem;
     }
 
+     generateRandomNote: function (array) {
+         var note = SheetMusicLibrary.spliceRandomItemFromArray(array);
+        resetNoteArray();
+        return note;
+    }
+
     generateRandomstring: function (array) {
-        var string = SheetMusicLibrary.spliceRandomItemFromArray(stringsArrayCopy);
+        var string = SheetMusicLibrary.spliceRandomItemFromArray(array);
         resetstringsArray();
         return string;
     }
 
     generateRandomNoteAndDrawOnStave: function (array) {
-        var string = generateRandomstring();
-        var note = generateRandomNote();
+        var string = SheetMusicLibrary.generateRandomstring();
+        var note = SheetMusicLibrary.generateRandomNote();
         clearCanvas();
         drawNoteOnStave(note, string);
     }
