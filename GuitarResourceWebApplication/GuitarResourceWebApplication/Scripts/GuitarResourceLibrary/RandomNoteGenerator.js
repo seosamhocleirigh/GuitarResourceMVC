@@ -9,9 +9,7 @@ var RandomNoteGenerator = {
     defaults: {
         buttonNextNote: $("#buttonrandomnote"),
         randomNoteOutputElement: $("#outputboxnotes"),
-        randomStringOutputElement: $("#outputboxstring"),
-        naturalCheckBoxElement: $("#natural notes"),
-        stringCheckBoxElement: $("#strings")
+        randomStringOutputElement: $("#outputboxstring")
 
     },
 
@@ -35,7 +33,7 @@ var RandomNoteGenerator = {
         console.log("output to UI fired");
         var randomNote = "";
 
-        if (RandomNoteGenerator.defaults.naturalCheckBoxElement.prop("checked")) {
+        if ($("[name='natural notes']").prop("checked")) {
             randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.naturalArrayCopy);
         } else {
             randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.noteArrayCopy);
@@ -43,7 +41,7 @@ var RandomNoteGenerator = {
 
         $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
 
-        if (RandomNoteGenerator.defaults.stringCheckBoxElement.prop("checked")) {
+        if ($("[name='strings']").prop("checked")) {
             randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.stringsArrayCopy);
             $(RandomNoteGenerator.defaults.randomStringOutputElement.selector).text(randomNote);
         }
