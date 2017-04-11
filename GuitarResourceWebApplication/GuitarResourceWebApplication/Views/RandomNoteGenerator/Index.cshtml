@@ -21,20 +21,25 @@
 </div>
 
 <div class="container-fluid">
+    @Resources.RandomNoteGenerator.ParagraphRandomNoteTool
+</div>
+
+<div class="container-fluid">
     <div class="row" style="margin-right: 1px;padding-right: 180px;padding-bottom: 25px;padding-top: 25px;">
         <div class="col-md-3 col-md-offset-4 text-center">
             <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
         </div>
         <div class="col-md-3">
             <form action="">
-                <input type="checkbox" id="natural notes" value="natural notes" /> Generate natural notes only<br />
-                <input type="checkbox" id="strings" value="strings" /> Generate string
+                <input type="checkbox" name="natural notes" value="natural notes" /> Generate natural notes only<br />
+                <input type="checkbox" name="strings" value="strings" /> Generate string
             </form>
               
 
         </div>
     </div>
 </div>
+
 
 <!-- Outputboxes -->
 <div class="container-fluid">
