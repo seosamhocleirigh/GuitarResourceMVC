@@ -3,7 +3,7 @@ var RandomNoteLibrary = {
 
     noteArray: ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
     naturalArray: ["A", "B", "C", "D", "E", "F", "G"],
-    stringsArray: ["1", "2", "3", "4", "5", "6"],
+    stringsArray: ["1", "2", "3", "4", "5", "6"]
 
 
 

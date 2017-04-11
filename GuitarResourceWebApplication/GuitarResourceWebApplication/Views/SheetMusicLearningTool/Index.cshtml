@@ -22,21 +22,6 @@
        
     }
 
-    //function shuffleArray(array) {
-    //    var j, x, i;
-    //    for (i = a.length; i; i--) {
-    //        j = Math.floor(Math.random() * i);
-    //        x = a[i - 1];
-    //        a[i - 1] = a[j];
-    //        a[j] = x;
-    //    }
-    //}
-
-    //function pickRandomItemFromArray(array) {
-    //    var itemIndex = Math.floor(Math.random() * array.length);
-    //    return array[itemIndex];
-    //}
-
     function spliceRandomItemFromArray(array) {
         var randomItem = pickRandomItemFromArray(array);
         var index = array.indexOf(randomItem);
@@ -60,17 +45,9 @@
     $(document).ready(function () {
         var guitarResource = new GuitarResource();
         guitarResource.pickRandomItemFromArray(noteArray);
-        //canvas = document.getElementById("boo");
-        //generateRandomNoteAndDrawOnStave();
-      
-        //var button = document.getElementById("buttonrandomsheetmusic");
-        //button.onclick = function () {
-        //    generateRandomNoteAndDrawOnStave();
-        //}
+        
     });
 
-
-   
     function resetstringsArray() {
         if (stringsArrayCopy.length === 0)
             stringsArrayCopy = stringsArray.slice();
