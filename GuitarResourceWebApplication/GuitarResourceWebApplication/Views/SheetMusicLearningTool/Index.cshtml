@@ -3,127 +3,6 @@
     ViewBag.Title = "Index";
 }
 
- @*Notes can be suffixed by the following accidentals: #, ##, @, @@, and n signifying sharp, double-sharp, flat, double-flat, and natural, respectively.*@ 
-@*<script>
-
-    var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-    var stringsArray = ["1", "2", "3", "4", "5", "6"];
-    var noteArrayCopy = noteArray.slice();
-    var stringsArrayCopy = stringsArray.slice();
-    var canvas;
-
-    function clearCanvas() {
-        canvas.innerText = "";
-    }
-
-    function resetNoteArray() {
-        if (noteArrayCopy.length === 0)
-            noteArrayCopy = noteArray.slice();
-       
-    }
-
-    //function shuffleArray(array) {
-    //    var j, x, i;
-    //    for (i = a.length; i; i--) {
-    //        j = Math.floor(Math.random() * i);
-    //        x = a[i - 1];
-    //        a[i - 1] = a[j];
-    //        a[j] = x;
-    //    }
-    //}
-
-    function pickRandomItemFromArray(array) {
-        var itemIndex = Math.floor(Math.random() * array.length);
-        return array[itemIndex];
-    }
-
-    function spliceRandomItemFromArray(array) {
-        var randomItem = pickRandomItemFromArray(array);
-        var index = array.indexOf(randomItem);
-        array.splice(index, 1);
-        return randomItem;
-    }
-
-    function generateRandomNote() {
-        var note = spliceRandomItemFromArray(noteArrayCopy);
-        resetNoteArray();
-        return note;
-    }
-
-    function generateRandomNoteAndDrawOnStave() {
-        var string = generateRandomstring();
-        var note = generateRandomNote();
-        clearCanvas();
-        drawNoteOnStave(note, string);
-    }
-
-    //$(document).ready(function () {
-    //    var guitarResource = new GuitarResource();
-    //    guitarResource.pickRandomItemFromArray(noteArray);
-    //    //canvas = document.getElementById("boo");
-    //    //generateRandomNoteAndDrawOnStave();
-      
-    //    //var button = document.getElementById("buttonrandomsheetmusic");
-    //    //button.onclick = function () {
-    //    //    generateRandomNoteAndDrawOnStave();
-    //    //}
-    //});
-
-
-   
-    function resetstringsArray() {
-        if (stringsArrayCopy.length === 0)
-            stringsArrayCopy = stringsArray.slice();
-    }
-
-    function generateRandomstring() {
-        var string = spliceRandomItemFromArray(stringsArrayCopy);
-        resetstringsArray();
-        return string;
-    }
-
-    function generateRandomstringAndDrawOnStave() {
-        var string = generateRandomstring();
-        clearCanvas();
-        drawNoteOnStave(string);
-    }
-
-    $(document).ready(function () {
-        canvas = document.getElementById("boo");
-        generateRandomstringAndDrawOnStave();
-
-        var button = document.getElementById("buttonrandomsheetmusic");
-        button.onclick = function () {
-            generateRandomstringAndDrawOnStave(string);
-        }
-    });
-
-
-
-    function drawNoteOnStave(note, string) {
-        VF = Vex.Flow;
-
-        var renderer = new VF.Renderer(canvas, VF.Renderer.Backends.SVG);
-
-        renderer.resize(400, 300);
-        var context = renderer.getContext();
-        context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
-
-        var stave = new VF.Stave(10, 40, 400);
-        stave.addClef("treble").addTimeSignature("4/4");
-        stave.setContext(context).draw();
-
-        var notes = [
-            new VF.StaveNote({ keys: [note+"/"+string], duration: "w" }),
-        ];
-
-        var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
-        voice.addTickables(notes);
-
-        var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
-        voice.draw(context, stave);
-    }*@
-@*</script>*@
 <script>
 
     $(function () {
@@ -132,8 +11,6 @@
     });
 
 </script>
-
-
 
 <div class="containe-fluid">
     <div class="row">

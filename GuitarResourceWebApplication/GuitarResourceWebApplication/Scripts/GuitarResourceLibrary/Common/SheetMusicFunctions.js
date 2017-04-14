@@ -15,8 +15,8 @@ var SheetMusicLibrary = {
 
     drawNoteOnStave: function (note, string, canvasElement) {
         VF = Vex.Flow;
-
-        var renderer = new VF.Renderer(canvasElement, VF.Renderer.Backends.SVG);
+        var canvasElementJS = $(canvasElement.selector).get(0);
+        var renderer = new VF.Renderer(canvasElementJS, VF.Renderer.Backends.SVG);
 
         renderer.resize(400, 300);
         var context = renderer.getContext();
@@ -35,6 +35,6 @@ var SheetMusicLibrary = {
 
         var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
         voice.draw(context, stave);
-        }
+    }
 
 };

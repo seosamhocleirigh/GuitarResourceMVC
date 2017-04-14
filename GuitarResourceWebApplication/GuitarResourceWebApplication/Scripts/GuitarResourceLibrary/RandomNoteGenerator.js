@@ -10,40 +10,42 @@ var RandomNoteGenerator = {
         buttonNextNote: $("#buttonrandomnote"),
         randomNoteOutputElement: $("#outputboxnotes"),
         randomStringOutputElement: $("#outputboxstring"),
-        naturalCheckBoxElement: $('#naturalnotescheckbox'),
-        stringsCheckBoxElement: $('#stringscheckbox')
+        naturalCheckBoxSelector: '#naturalnotescheckbox',
+        stringsCheckBoxSelector: '#stringscheckbox'
     },
 
     init: function (settings) {
         console.log("Random note generator initialising");
-        $.extend(RandomNoteGenerator.defaults, settings);
-        RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
-        RandomNoteGenerator.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
-        RandomNoteGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
-        RandomNoteGenerator.bindUIActions();
+        $.extend(this.defaults, settings);
+        this.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+        this.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
+        this.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
+        this.bindUIActions();
     },
 
     bindUIActions: function () {
         console.log("binding UI");
-        $(RandomNoteGenerator.defaults.buttonNextNote.selector).click(function () {
+        $(this.defaults.buttonNextNote.selector).click(function () {
             RandomNoteGenerator.outputRandomNoteToUI();
         })
     },
 
     outputRandomNoteToUI: function () {
         console.log("output to UI fired");
-        var randomNote = "";
+        var randomNote = "",
+            naturalCheckBoxElement = $(RandomNoteGenerator.defaults.naturalCheckBoxSelector),
+            stringsCheckBoxElement = $(RandomNoteGenerator.defaults.stringsCheckBoxSelector);
 
-        if (RandomNoteGenerator.naturalCheckBoxElement.selector.prop("checked")) {
-            randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.naturalArrayCopy);
+        if (naturalCheckBoxElement.prop("checked")) {
+            randomNote = RandomNoteLibrary.generateRandomItemFromArray(RandomNoteGenerator.naturalArrayCopy);
         } else {
-            randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.noteArrayCopy);
+            randomNote = RandomNoteLibrary.generateRandomItemFromArray(RandomNoteGenerator.noteArrayCopy);
         }
 
         $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
 
-        if (RandomNoteGenerator.stringsCheckBoxElement.selector.prop("checked")) {
-            randomNote = RandomNoteLibrary.generateRandomNote(RandomNoteGenerator.stringsArrayCopy);
+        if (stringsCheckBoxElement.prop("checked")) {
+            randomNote = RandomNoteLibrary.generateRandomItemFromArray(RandomNoteGenerator.stringsArrayCopy);
             $(RandomNoteGenerator.defaults.randomStringOutputElement.selector).text(randomNote);
         }
 

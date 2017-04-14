@@ -11,7 +11,7 @@ var RandomNoteLibrary = {
         return RandomNoteLibrary.noteArray.slice();
     },
     copyNaturalArray: function () {
-        return RandomNoteLibrary.naturalArray.slice();
+        return RandomNoteLibrary.naturalNoteArray.slice();
     },
     copyStringsArray: function () {
         return RandomNoteLibrary.stringsArray.slice();
