@@ -10,28 +10,30 @@ var SheetMusicGenerator = {
     },
 
     init: function (settings) {
-        console.log("Random note generator initialising");
+        console.log("Sheet music generator initialising");
         $.extend(SheetMusicGenerator.defaults, settings);
-        SheetMusicGenerator.noteArrayCopy = SheetMusicLibrary.copyNoteArray();
-        SheetMusicGenerator.stringsArrayCopy = SheetMusicLibrary.copyStringsArray();
-
-       
+        SheetMusicGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+        SheetMusicGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
+        SheetMusicGenerator.bindUIActions();
     },
 
     bindUIActions: function () {
         console.log("binding UI");
         $(SheetMusicGenerator.defaults.buttonNextNote.selector).click(function () {
             SheetMusicGenerator.outputRandomNoteToUI();
-        })
+        });
     },
 
     outputRandomNoteToUI: function () {
         console.log("output to UI fired");
-        var randomNote = "";
+      
+        SheetMusicLibrary.generateRandomNoteAndDrawOnStave(SheetMusicGenerator.noteArrayCopy,
+            SheetMusicGenerator.stringsArrayCopy,
+            SheetMusicGenerator.defaults.vexflowOutputElement);
 
         if (SheetMusicGenerator.stringsArrayCopy.length === 0)
-            SheetMusicGenerator.stringsArrayCopy = SheetMusicLibrary.copyStringsArray.slice();
+            SheetMusicGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
         if (SheetMusicGenerator.noteArrayCopy.length === 0)
-            SheetMusicGenerator.noteArrayCopy = SheetMusicLibrary.copyNoteArray.slice();
+            SheetMusicGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
     }
 }

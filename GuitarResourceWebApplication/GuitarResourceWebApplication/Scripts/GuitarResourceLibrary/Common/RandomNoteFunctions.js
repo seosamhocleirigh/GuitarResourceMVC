@@ -2,7 +2,7 @@
 var RandomNoteLibrary = {
 
     noteArray: ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
-    naturalArray: ["A", "B", "C", "D", "E", "F", "G"],
+    naturalNoteArray: ["A", "B", "C", "D", "E", "F", "G"],
     stringsArray: ["1", "2", "3", "4", "5", "6"],
 
 
@@ -19,22 +19,28 @@ var RandomNoteLibrary = {
 
 
 
-    pickRandomItemFromArray: function (array) {
+    _pickRandomItemFromArray: function (array) {
         var itemIndex = Math.floor(Math.random() * array.length);
         return array[itemIndex];
     },
 
-    spliceRandomItemFromArray: function (array) {
-        var randomItem = RandomNoteLibrary.pickRandomItemFromArray(array);
+    _spliceRandomItemFromArray: function (array) {
+        var randomItem = RandomNoteLibrary._pickRandomItemFromArray(array);
         var index = array.indexOf(randomItem);
         array.splice(index, 1);
         return randomItem;
     },
 
-    generateRandomNote: function (array) {
-        var note = RandomNoteLibrary.spliceRandomItemFromArray(array);
-        //RandomNoteLibrary.resetNoteArray(array);
+    generateRandomItemFromArray: function (array) {
+        var note = RandomNoteLibrary._spliceRandomItemFromArray(array);
         return note;
     }
 
+    //generateRandomNote: function () {
+    //    RandomNoteLibrary.generateRandomItemFromArray(RandomNoteLibrary.noteArray);
+    //},
+
+    //generateRandomString: function () {
+    //    RandomNoteLibrary.generateRandomItemFromArray(RandomNoteLibrary.stringsArray);
+    //}
 };

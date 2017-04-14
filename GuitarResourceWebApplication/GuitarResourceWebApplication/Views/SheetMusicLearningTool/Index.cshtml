@@ -4,7 +4,7 @@
 }
 
  @*Notes can be suffixed by the following accidentals: #, ##, @, @@, and n signifying sharp, double-sharp, flat, double-flat, and natural, respectively.*@ 
-<script>
+@*<script>
 
     var noteArray = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
     var stringsArray = ["1", "2", "3", "4", "5", "6"];
@@ -32,10 +32,10 @@
     //    }
     //}
 
-    //function pickRandomItemFromArray(array) {
-    //    var itemIndex = Math.floor(Math.random() * array.length);
-    //    return array[itemIndex];
-    //}
+    function pickRandomItemFromArray(array) {
+        var itemIndex = Math.floor(Math.random() * array.length);
+        return array[itemIndex];
+    }
 
     function spliceRandomItemFromArray(array) {
         var randomItem = pickRandomItemFromArray(array);
@@ -57,17 +57,17 @@
         drawNoteOnStave(note, string);
     }
 
-    $(document).ready(function () {
-        var guitarResource = new GuitarResource();
-        guitarResource.pickRandomItemFromArray(noteArray);
-        //canvas = document.getElementById("boo");
-        //generateRandomNoteAndDrawOnStave();
+    //$(document).ready(function () {
+    //    var guitarResource = new GuitarResource();
+    //    guitarResource.pickRandomItemFromArray(noteArray);
+    //    //canvas = document.getElementById("boo");
+    //    //generateRandomNoteAndDrawOnStave();
       
-        //var button = document.getElementById("buttonrandomsheetmusic");
-        //button.onclick = function () {
-        //    generateRandomNoteAndDrawOnStave();
-        //}
-    });
+    //    //var button = document.getElementById("buttonrandomsheetmusic");
+    //    //button.onclick = function () {
+    //    //    generateRandomNoteAndDrawOnStave();
+    //    //}
+    //});
 
 
    
@@ -85,7 +85,7 @@
     function generateRandomstringAndDrawOnStave() {
         var string = generateRandomstring();
         clearCanvas();
-        drawstringOnStave("");
+        drawNoteOnStave(string);
     }
 
     $(document).ready(function () {
@@ -122,8 +122,18 @@
 
         var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
         voice.draw(context, stave);
-    }
+    }*@
+@*</script>*@
+<script>
+
+    $(function () {
+        SheetMusicGenerator.init();
+        
+    });
+
 </script>
+
+
 
 <div class="containe-fluid">
     <div class="row">

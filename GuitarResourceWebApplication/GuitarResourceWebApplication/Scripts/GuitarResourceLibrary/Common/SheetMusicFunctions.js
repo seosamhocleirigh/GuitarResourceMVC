@@ -1,46 +1,40 @@
 ﻿
 var SheetMusicLibrary = {
 
-    noteArray: ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
-    stringsArray: ["1", "2", "3", "4", "5", "6"],
-
-
-    copyNoteArray: function () {
-        return SheetMusicLibrary.noteArray.slice();
-    },
-    copyStringsArray: function () {
-        return SheetMusicLibrary.stringsArray.slice();
+    clearCanvas: function (canvasElement) {
+        canvasElement.innerText = "";
     },
 
-    pickRandomItemFromArray: function (array) {
-        var itemIndex = Math.floor(Math.random() * array.length);
-        return array[itemIndex];
+    generateRandomNoteAndDrawOnStave: function (noteArrayCopy, stringArrayCopy, canvasElement) {
+        var note = RandomNoteLibrary.generateRandomItemFromArray(noteArrayCopy);
+        var string = RandomNoteLibrary.generateRandomItemFromArray(stringArrayCopy);
+        
+        SheetMusicLibrary.clearCanvas(canvasElement);
+        SheetMusicLibrary.drawNoteOnStave(note, string, canvasElement);
     },
 
-    spliceRandomItemFromArray: function (array) {
-        var randomItem = SheetMusicLibrary.pickRandomItemFromArray(array);
-        var index = array.indexOf(randomItem);
-        array.splice(index, 1);
-        return randomItem;
-    }
+    drawNoteOnStave: function (note, string, canvasElement) {
+        VF = Vex.Flow;
 
-     generateRandomNote: function (array) {
-         var note = SheetMusicLibrary.spliceRandomItemFromArray(array);
-        resetNoteArray();
-        return note;
-    }
+        var renderer = new VF.Renderer(canvasElement, VF.Renderer.Backends.SVG);
 
-    generateRandomstring: function (array) {
-        var string = SheetMusicLibrary.spliceRandomItemFromArray(array);
-        resetstringsArray();
-        return string;
-    }
+        renderer.resize(400, 300);
+        var context = renderer.getContext();
+        context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
 
-    generateRandomNoteAndDrawOnStave: function (array) {
-        var string = SheetMusicLibrary.generateRandomstring();
-        var note = SheetMusicLibrary.generateRandomNote();
-        clearCanvas();
-        drawNoteOnStave(note, string);
-    }
+        var stave = new VF.Stave(10, 40, 400);
+        stave.addClef("treble").addTimeSignature("4/4");
+        stave.setContext(context).draw();
+
+        var notes = [
+        new VF.StaveNote({ keys: [note + "/" + string], duration: "w" }),
+        ];
+
+        var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
+        voice.addTickables(notes);
+
+        var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+        voice.draw(context, stave);
+        }
 
 };
