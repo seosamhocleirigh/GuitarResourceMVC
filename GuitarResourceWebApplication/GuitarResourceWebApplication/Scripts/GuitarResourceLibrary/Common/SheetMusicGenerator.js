@@ -5,8 +5,8 @@ var SheetMusicGenerator = {
     stringsArrayCopy: [],
 
     defaults: {
-        buttonNextNote: $("#buttonrandomsheetmusic"),
-        vexflowOutputElement: $("#boo")
+        buttonNextNoteSelector: "#buttonrandomsheetmusic",
+        vexflowOutputSelector: "#boo"
     },
 
     init: function (settings) {
@@ -19,7 +19,7 @@ var SheetMusicGenerator = {
 
     bindUIActions: function () {
         console.log("binding UI");
-        $(SheetMusicGenerator.defaults.buttonNextNote.selector).click(function () {
+        $(SheetMusicGenerator.defaults.buttonNextNoteSelector).click(function () {
             SheetMusicGenerator.outputRandomNoteToUI();
         });
     },
@@ -29,7 +29,7 @@ var SheetMusicGenerator = {
       
         SheetMusicLibrary.generateRandomNoteAndDrawOnStave(SheetMusicGenerator.noteArrayCopy,
             SheetMusicGenerator.stringsArrayCopy,
-            SheetMusicGenerator.defaults.vexflowOutputElement);
+            $(SheetMusicGenerator.defaults.vexflowOutputSelector));
 
         if (SheetMusicGenerator.stringsArrayCopy.length === 0)
             SheetMusicGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();

@@ -1,16 +1,20 @@
 ﻿
 var SheetMusicLibrary = {
 
+    submitInputBoxSelector: '#noteinput',
+    resultDisplaySelector: '#truefalsedisplay',
+    generatedNote: "",
+
     clearCanvas: function (canvasElement) {
-        canvasElement.innerText = "";
+        canvasElement.empty();
     },
 
     generateRandomNoteAndDrawOnStave: function (noteArrayCopy, stringArrayCopy, canvasElement) {
-        var note = RandomNoteLibrary.generateRandomItemFromArray(noteArrayCopy);
+        this.generatedNote = RandomNoteLibrary.generateRandomItemFromArray(noteArrayCopy);
         var string = RandomNoteLibrary.generateRandomItemFromArray(stringArrayCopy);
         
         SheetMusicLibrary.clearCanvas(canvasElement);
-        SheetMusicLibrary.drawNoteOnStave(note, string, canvasElement);
+        SheetMusicLibrary.drawNoteOnStave(this.generatedNote, string, canvasElement);
     },
 
     drawNoteOnStave: function (note, string, canvasElement) {
@@ -26,15 +30,31 @@ var SheetMusicLibrary = {
         stave.addClef("treble").addTimeSignature("4/4");
         stave.setContext(context).draw();
 
+        var staveNote = new VF.StaveNote({ keys: [note + "/" + string], duration: "q" });
+
+        if (note.indexOf("#") > -1) {
+            staveNote.addAccidental(0, new VF.Accidental("#"));
+        } else if (note.indexOf("b") > -1) {
+            staveNote.addAccidental(0, new VF.Accidental("b"));
+        }
+
         var notes = [
-        new VF.StaveNote({ keys: [note + "/" + string], duration: "w" }),
+            staveNote
         ];
 
-        var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
+        var voice = new VF.Voice({ num_beats: 1, beat_value: 4 });
         voice.addTickables(notes);
 
         var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
         voice.draw(context, stave);
-    }
+    },
 
+    checkField: function () {
+        console.log("Checkfield Fired");
+        if (this.generatedNote === $(this.submitInputBoxSelector).val().toUpperCase()) {
+            $(this.resultDisplaySelector).html("Correct");
+        } else {
+            $(this.resultDisplaySelector).html("Incorrect");
+        }
+    }
 };
