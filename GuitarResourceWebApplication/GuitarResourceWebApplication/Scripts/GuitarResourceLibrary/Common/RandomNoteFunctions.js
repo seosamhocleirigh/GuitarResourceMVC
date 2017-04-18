@@ -1,7 +1,7 @@
 ﻿
 var RandomNoteLibrary = {
 
-    noteArray: ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
+    noteArray: ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "Bb", "Eb", "Ab", "Db", "Gb", "Cb", "Fb"],
     naturalNoteArray: ["A", "B", "C", "D", "E", "F", "G"],
     stringsArray: ["1", "2", "3", "4", "5", "6"],
 

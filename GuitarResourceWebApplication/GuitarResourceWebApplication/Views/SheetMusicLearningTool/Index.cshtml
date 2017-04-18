@@ -12,7 +12,7 @@
 
 </script>
 
-    <div class="containe-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <img src=/images/sheetmusictool_heading.jpg class="img-responsive" style="padding: 12px 0px 12px 0px;" />
@@ -20,57 +20,66 @@
         </div>
     </div>
 
-        <div class="container-fluid">
+        @*<div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4 text-center" style="padding-bottom: 20px;">
                     <button type="button" id="buttonrandomsheetmusic" class="btn btn-warning btn-lg">-Generate-</button>
                 </div>
             </div>
+        </div>*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12" align="center">
+            <button type="button" id="buttonrandomsheetmusic" class="btn btn-warning btn-lg">-Generate-</button>
         </div>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-sm-3">
+
+
+
+        @*<div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-3">
+                        <input class="btn btn-warning btn-lg" id="submitsheetmusic" type="submit" value="Submit" onclick="SheetMusicLibrary.checkField()" ; />
+                        <div class="col-xs-4">
+                            <span class="input-group-addon">Name note:</span>
+                            <input id="noteinput" type="text" class="form-control" name="msg">
+                        </div>
+
+
+                        <span id="truefalsedisplay">
+
+                        </span>
                 </div>
-            </div>
-        </div>
-
+            </div>*@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 col-sm-3">
-                    <input class="btn btn-warning btn-lg" id="submitsheetmusic" type="submit" value="Submit" onclick="SheetMusicLibrary.checkField()" ; />
-                    <div class="input-group">
-                        <span class="input-group-addon">Name note:</span>
-                        <input id="noteinput" type="text" class="form-control" name="msg">
-                    </div>
-
-            
-                    <span id="truefalsedisplay">
-                        
-                    </span>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4 col-sm-offset-4 text-center" style="padding: 12px 0px 12px 0px;">
+                <div class="col-sm-4 col-sm-offset-4 text-center" align="center" style="padding: 12px 0px 12px 0px;width: 400px;height: 300px; ">
                     <div id="boo">
 
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="col-xs-12" align="center">
+        <input class="btn btn-warning btn-lg" id="submitsheetmusic" type="submit" value="Submit" onclick="SheetMusicLibrary.checkField()" ; />
+        <div class="col-xs-12" align="center">
+            <span class="input-group-addon">Name note:</span>
+            <input id="noteinput" type="text" class="form-control" name="msg">
+        </div>
+
+
+        <span id="truefalsedisplay" style="">
+
+        </span>
+    </div>
 </div>
 
 
 
 
 
-@*<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 text-center" style="padding-bottom: 20px;">
-            <button type="button" id="submitsheetmusic" class="btn btn-warning btn-lg">-Submit-</button>
-        </div>
-    </div>
-</div>*@
+
