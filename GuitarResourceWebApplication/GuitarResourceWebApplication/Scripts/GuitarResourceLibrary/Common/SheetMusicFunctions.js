@@ -52,9 +52,9 @@ var SheetMusicLibrary = {
     checkField: function () {
         console.log("Checkfield Fired");
         if (this.generatedNote === $(this.submitInputBoxSelector).val().toUpperCase()) {
-            $(this.resultDisplaySelector).html("Correct");
+            $(this.resultDisplaySelector).html("Correct").css('color', 'green');
         } else {
-            $(this.resultDisplaySelector).html("Incorrect");
+            $(this.resultDisplaySelector).html("Incorrect").css('color', 'red');
         }
     }
 };
