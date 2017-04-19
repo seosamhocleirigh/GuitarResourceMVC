@@ -18,7 +18,6 @@ var RandomNoteLibrary = {
     },
 
 
-
     _pickRandomItemFromArray: function (array) {
         var itemIndex = Math.floor(Math.random() * array.length);
         return array[itemIndex];
@@ -35,12 +34,4 @@ var RandomNoteLibrary = {
         var note = RandomNoteLibrary._spliceRandomItemFromArray(array);
         return note;
     }
-
-    //generateRandomNote: function () {
-    //    RandomNoteLibrary.generateRandomItemFromArray(RandomNoteLibrary.noteArray);
-    //},
-
-    //generateRandomString: function () {
-    //    RandomNoteLibrary.generateRandomItemFromArray(RandomNoteLibrary.stringsArray);
-    //}
 };
