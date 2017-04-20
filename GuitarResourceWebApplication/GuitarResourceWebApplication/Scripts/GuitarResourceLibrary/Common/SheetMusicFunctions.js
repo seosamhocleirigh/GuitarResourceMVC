@@ -51,7 +51,9 @@ var SheetMusicLibrary = {
 
     checkField: function () {
         console.log("Checkfield Fired");
-        if (this.generatedNote === $(this.submitInputBoxSelector).val().toUpperCase()) {
+        var userInput = $(this.submitInputBoxSelector).val();
+        var capitalise_userInput = userInput.charAt(0).toUpperCase() + userInput.slice(1);
+        if (this.generatedNote === capitalise_userInput) {
             $(this.resultDisplaySelector).html("Correct").css('color', 'green');
         } else {
             $(this.resultDisplaySelector).html("Incorrect").css('color', 'red');
