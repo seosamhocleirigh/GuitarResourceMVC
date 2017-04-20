@@ -52,7 +52,7 @@ var SheetMusicLibrary = {
     checkField: function () {
         console.log("Checkfield Fired");
         var userInput = $(this.submitInputBoxSelector).val();
-        var capitalise_userInput = userInput.charAt(0).toUpperCase() + userInput.slice(1);
+        var capitalise_userInput = userInput.charAt(0).toUpperCase() + userInput.charAt(1).toLowerCase();
         if (this.generatedNote === capitalise_userInput) {
             $(this.resultDisplaySelector).html("Correct").css('color', 'green');
         } else {
