@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonGenerate" xml:space="preserve">
+    <value>-Generate-</value>
+  </data>
   <data name="ParagraphIntroduction" xml:space="preserve">
     <value>This is a growing/developing website that caters for learning guitar players.</value>
   </data>

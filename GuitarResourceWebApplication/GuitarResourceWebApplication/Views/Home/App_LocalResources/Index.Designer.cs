@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -Generate-.
+        /// </summary>
+        public static string ButtonGenerate {
+            get {
+                return ResourceManager.GetString("ButtonGenerate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a growing/developing website that caters for learning guitar players..
         /// </summary>
         public static string ParagraphIntroduction {

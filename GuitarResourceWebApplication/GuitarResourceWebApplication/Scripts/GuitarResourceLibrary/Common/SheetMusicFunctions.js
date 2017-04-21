@@ -1,7 +1,9 @@
 ﻿
 var SheetMusicLibrary = {
 
-    submitInputBoxSelector: '#noteinput',
+    noteDropdownMenuSelector: "#noteSelectMenu",
+    accidentalDropdownMenuSelector: '#accidentalSelectMenu',
+    //submitInputBoxSelector: '#noteinput',
     resultDisplaySelector: '#truefalsedisplay',
     generatedNote: "",
 
@@ -51,12 +53,15 @@ var SheetMusicLibrary = {
 
     checkField: function () {
         console.log("Checkfield Fired");
-        var userInput = $(this.submitInputBoxSelector).val();
-        var capitalise_userInput = userInput.charAt(0).toUpperCase() + userInput.charAt(1).toLowerCase();
-        if (this.generatedNote === capitalise_userInput) {
-            $(this.resultDisplaySelector).html("Correct").css('color', 'green');
+        var userSelection = $(this.noteDropdownMenuSelector).val() + $(this.accidentalDropdownMenuSelector).val();
+
+
+        //var userInput = $(this.submitInputBoxSelector).val();
+        //var capitaliseUserInput = userInput.charAt(0).toUpperCase() + userInput.charAt(1).toLowerCase();
+        if (this.generatedNote === userSelection) {
+            $(this.resultDisplaySelector).html("Correct").css('background-color', 'green');
         } else {
-            $(this.resultDisplaySelector).html("Incorrect").css('color', 'red');
+            $(this.resultDisplaySelector).html("Incorrect").css('background-color', 'red');
         }
     }
 };

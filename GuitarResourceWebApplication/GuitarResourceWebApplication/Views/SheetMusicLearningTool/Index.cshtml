@@ -37,14 +37,49 @@
         </div>
     </div>
 
-    <div class="col-xs-12" align="center">
-        <span class="input-group-addon" style="width: 100px;">name note:</span>
-        <input id="noteinput" type="text" class="form-control" name="msg" style="width: 100px;">
+    <div class="container">
+        <div class="col-xs-12" align="center">
+            <h1>Select Note:</h1>
+            <form>
+                <div class="form-group">
+                    <label for="sel1">Select list (select one):</label>
+                    <select class="form-control" id="noteSelectMenu">
+                        <option></option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                        <option>G</option>
+                    </select>
+                    <br>
+                </div>
+            </form>
+            <div class="col-xs-12" align="center">
+                <h1>Select accidental(if applicable):</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="sel1">Select list (select one):</label>
+                        <select class="form-control" id="accidentalSelectMenu">
+                            <option></option>
+                            <option>#</option>
+                            <option>b</option>
+                        </select>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @*<div class="col-xs-12" align="center">*@
+        @*<span class="input-group-addon" style="width: 100px;">name note:</span>
+        <input id="noteinput" type="text" class="form-control" name="msg" style="width: 100px;">*@
         <div class="col-xs-12" align="center">
             <input class="btn btn-warning btn-lg" id="submitsheetmusic" type="submit" value="Submit" onclick="SheetMusicLibrary.checkField()" ; />
         </div>
 
-        <span id="truefalsedisplay" style="">
+        <span id="truefalsedisplay" style="font-size: 25px;">
 
         </span>
     </div>
