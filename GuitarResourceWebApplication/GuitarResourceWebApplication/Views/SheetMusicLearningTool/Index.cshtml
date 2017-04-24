@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script>
+
+    $(function () {
+        SheetMusicGenerator.init();
+        
+    });
+
+</script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12" align="center">
+                <img src=/images/sheetmusictool_heading.jpg class="img-responsive" style="padding: 12px 0px 12px 0px;" />
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12" align="center"   >
+            <button type="button" id="buttonrandomsheetmusic" class="btn btn-warning btn-lg">-Generate-</button>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12" align="center" style="padding: 24px 0px 12px 0px;">
+                    <div id="boo" style="width: 400px;height: 300px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12" align="center">
+        <span class="input-group-addon" style="width: 100px;">name note:</span>
+        <input id="noteinput" type="text" class="form-control" name="msg" style="width: 100px;">
+        <div class="col-xs-12" align="center">
+            <input class="btn btn-warning btn-lg" id="submitsheetmusic" type="submit" value="Submit" onclick="SheetMusicLibrary.checkField()" ; />
+        </div>
+
+        <span id="truefalsedisplay" style="">
+
+        </span>
+    </div>
+</div>
+
+
+
+
+
+
+

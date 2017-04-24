@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script>
+
+    $(function () {
+        RandomNoteGenerator.init();
+       
+    });
+
+</script>
+
+    
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" align="center">
+            <img src=/images/random_generator_heading.jpg class="img-responsive" style="padding: 12px 0px 12px 0px;" />
+        </div>
+    </div>
+</div>
+
+
+<div class="col-xs-12" align="center">
+    @Resources.RandomNoteGenerator.ParagraphRandomNoteTool
+</div>
+
+<div class="container-fluid">
+    <div class="row" style="margin-right: 1px;;padding-bottom: 25px;padding-top: 25px;">
+        <div class="col-xs-12" align="center">
+            <button type="button" id="buttonrandomnote" class="btn btn-warning btn-lg">Generate note</button>
+            <div class="col-xs-12" align="center">
+                <form action="">
+                    <input type="checkbox" id="naturalnotescheckbox" value="natural notes" /> Generate natural notes only<br />
+                    <input type="checkbox" id="stringscheckbox" value="strings" /> Generate string
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Outputboxes -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-sm-3 col-sm-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Find note:</div>
+                <div class="panel-body" id="outputboxnotes">Find note:</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Find note on string:</div>
+                <div class="panel-body" id="outputboxstring">Find note on string:</div>
+            </div>
+        </div>
+    </div>
+</div>

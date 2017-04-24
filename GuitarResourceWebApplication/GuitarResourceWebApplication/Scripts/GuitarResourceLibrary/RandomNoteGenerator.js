@@ -1,51 +1,65 @@
-﻿var randomNoteGeneratorSettings,
-    RandomNoteGenerator = {
-
-        /*
-
-        <script src="/Scripts/GuitarResourceLibrary/RandomNoteGenerator.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            RandomNoteGenerator.init();
-        });
-    </script>
-
-    <p>
-            <div type="button" id="ButtonNextNote" class="btn btn-default">
-                Click Me
-            </div>
-            <span>Random Note: </span><label id="RandomNote"></label>
-        </p>
-
-        */
+﻿
+var RandomNoteGenerator = {
 
 
-        settings: {
-            buttonNextNote: $("#ButtonNextNote"),
-            randomNoteElement: $("#RandomNote")
-        },
-        
-        init: function () {
-            console.log("Random note generator initialising");
-            randomNoteGeneratorSettings = RandomNoteGenerator.settings
-            RandomNoteGenerator.bindUIActions();
-        },
+    noteArrayCopy: [],
+    naturalArrayCopy: [],
+    stringsArrayCopy: [],
 
-        bindUIActions: function () {
-            console.log("binding UI");
-            $(randomNoteGeneratorSettings.buttonNextNote.selector).click(function () {
-                RandomNoteGenerator.outputRandomNoteToUI();
-            })
-        },
+    defaults: {
+        buttonNextNote: $("#buttonrandomnote"),
+        randomNoteOutputElement: $("#outputboxnotes"),
+        randomStringOutputElement: $("#outputboxstring"),
+        naturalCheckBoxSelector: '#naturalnotescheckbox',
+        stringsCheckBoxSelector: '#stringscheckbox'
+    },
 
-        outputRandomNoteToUI: function () {
-            console.log("output to UI fired");
-            var randomNote = RandomNoteGenerator.generateRandomNote();
-            $(randomNoteGeneratorSettings.randomNoteElement.selector).text(randomNote);
-        },
+    init: function (settings) {
+        console.log("Random note generator initialising");
+        $.extend(this.defaults, settings);
+        this.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+        this.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
+        this.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
+        this.bindUIActions();
+    },
 
-        generateRandomNote: function () {
-            console.log("generating random note");
-            return "A";
+    bindUIActions: function () {
+        console.log("binding UI");
+        $(this.defaults.buttonNextNote.selector).click(function () {
+            RandomNoteGenerator.outputRandomNoteToUI();
+        })
+    },
+
+    outputRandomNoteToUI: function () {
+        console.log("output to UI fired");
+        var randomNote = "",
+            naturalCheckBoxElement = $(RandomNoteGenerator.defaults.naturalCheckBoxSelector),
+            stringsCheckBoxElement = $(RandomNoteGenerator.defaults.stringsCheckBoxSelector);
+
+        if (naturalCheckBoxElement.prop("checked")) {
+            randomNote = RandomNoteLibrary.generateRandomItemFromArray(RandomNoteGenerator.naturalArrayCopy);
+        } else {
+            randomNote = RandomNoteLibrary.generateRandomItemFromArray(RandomNoteGenerator.noteArrayCopy);
         }
-    };
+
+        $(RandomNoteGenerator.defaults.randomNoteOutputElement.selector).text(randomNote);
+
+        if (stringsCheckBoxElement.prop("checked")) {
+            randomNote = RandomNoteLibrary.generateRandomItemFromArray(RandomNoteGenerator.stringsArrayCopy);
+            $(RandomNoteGenerator.defaults.randomStringOutputElement.selector).text(randomNote);
+        }
+
+        if (RandomNoteGenerator.naturalArrayCopy.length === 0)
+            RandomNoteGenerator.naturalArrayCopy = RandomNoteLibrary.copyNaturalArray();
+        if (RandomNoteGenerator.noteArrayCopy.length === 0)
+            RandomNoteGenerator.noteArrayCopy = RandomNoteLibrary.copyNoteArray();
+        if (RandomNoteGenerator.stringsArrayCopy.length === 0)
+            RandomNoteGenerator.stringsArrayCopy = RandomNoteLibrary.copyStringsArray();
+    }
+};
+  
+
+
+
+        
+ 
