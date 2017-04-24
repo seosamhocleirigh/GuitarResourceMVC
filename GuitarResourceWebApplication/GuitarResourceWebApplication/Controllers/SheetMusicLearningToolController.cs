@@ -9,6 +9,7 @@ namespace GuitarResourceWebApplication.Controllers
     public class SheetMusicLearningToolController : Controller
     {
         // GET: SheetMusicLearningTool
+        [OutputCache(Duration = 7200, VaryByParam = "none")]
         public ActionResult Index()
         {
             return View();

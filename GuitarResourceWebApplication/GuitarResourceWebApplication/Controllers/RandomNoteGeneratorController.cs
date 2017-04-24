@@ -9,6 +9,7 @@ namespace GuitarResourceWebApplication.Controllers
     public class RandomNoteGeneratorController : Controller
     {
         // GET: RandomNoteGenerator
+        [OutputCache(Duration = 7200, VaryByParam = "none")]
         public ActionResult Index()
         {
             return View();

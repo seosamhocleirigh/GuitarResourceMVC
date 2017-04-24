@@ -8,6 +8,7 @@ namespace GuitarResourceWebApplication.Controllers
 {
     public class HomeController : Controller
     {
+        [OutputCache(Duration = 7200, VaryByParam = "none")]
         public ActionResult Index()
         {
             return View();
